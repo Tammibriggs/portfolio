@@ -1,0 +1,28 @@
+.about{
+  margin-top: 100px;
+  width: 100%;
+  background-color: var(--darkcolor2);
+}
+
+.about__mobile{
+  padding: 20px 0;
+  text-align: center;
+  color: var(--lightcolor5);
+}
+
+.about__mobile img{
+  width: 100px;
+  height: 110px;
+  position: relative;
+  border-radius: 100%;
+  bottom: 60px;
+  border: 2px solid var(--lightcolor5);
+}
+
+.about__mobile p{
+  position: relative;
+  line-height: 1.7rem;
+  font-size: 1.1rem;
+  bottom: 40px;
+  color: var(--lightcolor4);
+}

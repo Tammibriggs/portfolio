@@ -1,0 +1,17 @@
+.skill{
+  margin-right: 20px;
+  display: block;
+}
+  
+.skill span{
+  margin: 0 auto;
+}
+  
+.skills img{
+  width: 40px;
+  height: 50px;
+}
+
+#cssIcon{
+  width: 47px;
+}

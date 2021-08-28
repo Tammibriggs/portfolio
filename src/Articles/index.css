@@ -1,0 +1,10 @@
+.articles{
+    margin-top: 50px;
+    padding: 20px 0;
+}
+
+.articles h2{
+    color: var(--darkcolor1);
+    text-align: center;
+    font-size: 1.8rem;
+}

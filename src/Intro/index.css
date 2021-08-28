@@ -1,0 +1,66 @@
+.intro{
+  background-color: var(--darkcolor1);
+  min-height: 400px;
+  display: flex;
+  align-items: center;
+  color: var(--lightcolor5);
+  background-image: url("../images/james-harrison-vpOeXr5wmR4-unsplash.jpg");
+  background-position: center;
+  background-size: cover;
+  background-color: var(--lightcolor1);
+  background-repeat: no-repeat;
+  background-blend-mode: multiply;
+}
+
+.intro__intro{
+  font-size: 2rem;
+}
+
+.intro__intro > span{
+  display: block;
+}
+
+.intro__intro > span:nth-child(1){
+  font-size: 1.5rem;
+  color: var(--lightcolor2);
+}
+
+.intro__intro > span:nth-child(2){
+  color: var(--lightcolor5);
+}
+
+.intro__intro > span:nth-child(3){
+  font-size: 1.5rem;
+  color: var(--lightcolor2);
+}
+
+#intro__intro__button{
+  border:1px solid var(--lightcolor5);
+  text-transform: unset;
+  line-height: 24px;
+  margin-top: 30px;
+  font-weight: 400;
+  font-size: 1.2rem;
+  color: var(--lightcolor5);
+}
+
+#intro__intro__button a{
+  color: var(--lightcolor5);
+}
+
+#intro__intro__button:hover{
+  background-color: var(--lightcolor1);
+}
+
+.intro__intro__socialIcons{
+  margin-top: 10px;
+}
+
+.intro__intro__socialIcons a{
+  color: var(--lightcolor2);
+  margin-right: 5px;
+}
+
+.intro__intro__socialIcons a:hover{
+  color: var(--lightcolor3);
+}

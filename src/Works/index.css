@@ -1,0 +1,11 @@
+.works{
+  padding-top: 50px;
+  background-color: var(--lightcolor5);
+  padding-bottom: 30px;
+}
+
+.works h2{
+  text-align: center;
+  color: var(--darkcolor1);
+  font-size: 1.8rem;
+}

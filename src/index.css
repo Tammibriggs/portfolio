@@ -1,0 +1,30 @@
+:root{
+  --darkcolor1: hsl(210, 27%, 8%);
+  --darkcolor2: hsl(210, 27%, 16%);
+  --darkcolor3: hsl(210, 21%, 26%);
+  --darkcolor4: hsl(210, 13%, 37%);
+  --lightcolor1: hsl(210, 9%, 56%);
+  --lightcolor2: hsl(210, 13%, 71%);
+  --lightcolor3: hsl(210, 12%, 84%);
+  --lightcolor4: hsl(210, 18%, 90%);
+  --lightcolor5: hsl(220, 12%, 95%);
+}
+
+*{
+  margin: 0;
+  padding: 0;
+  outline: none;
+  border: none;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+
+a{
+  text-decoration: none;
+}
+
+
+.wrapper{
+  width: 90%;
+  margin: 0 auto;
+}

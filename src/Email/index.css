@@ -1,0 +1,65 @@
+.email{
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+.email h2{
+  text-align: center;
+  color: var(--darkcolor1);
+  font-size: 1.8rem;
+}
+
+.email > div{
+  margin-top: 20px;
+}
+
+.email form{
+  height: 370px;
+  padding: 20px 0;
+  max-width: 300px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.email form input{
+  height: 40px;
+  padding-left: 10px;
+  font-size: 1.1rem;
+  border: 1px solid var(--lightcolor4);
+  border-radius: 5px;
+}
+
+.email form input:focus{
+  box-shadow: 0 0 2px 2px var(--darkcolor2);
+}
+
+.email form textarea{
+  height: 200px;
+  padding-left: 10px;
+  padding-top: 10px;
+  border: 1px solid var(--lightcolor4);
+  font-size: 1.1rem;
+  border-radius: 5px;
+}
+
+.email form textarea:focus{
+  box-shadow: 0 0 2px 2px var(--darkcolor2);
+}
+
+.email form button{
+  height: 40px;
+  background-color: var(--darkcolor2);
+  color: var(--lightcolor5);
+  border-radius: 5px;
+  font-size: 1rem;
+}
+
+.email form button:hover{
+  background-color: var(--darkcolor3);
+}
+
+.email form button:active{
+  background-color: var(--darkcolor2);
+}
