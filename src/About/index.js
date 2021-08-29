@@ -4,6 +4,7 @@ import my_picture from '../images/my_picture.jpg'
 function About(){
   return(
     <div className="about wrapper">
+      <h2>About Me</h2>
       <div className="about__mobile wrapper">
         <img src={my_picture} alt="my pic"/>
 

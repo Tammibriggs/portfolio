@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="1122.5197"
+   height="793.70081"
+   viewBox="0 0 296.99998 210.00001"
+   version="1.1"
+   id="svg5155"
+   inkscape:version="1.1 (c68e22c387, 2021-05-23)"
+   sodipodi:docname="asayer.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview5157"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:document-units="px"
+     showgrid="false"
+     units="px"
+     inkscape:zoom="0.46324355"
+     inkscape:cx="682.14657"
+     inkscape:cy="313.01029"
+     inkscape:window-width="1023"
+     inkscape:window-height="728"
+     inkscape:window-x="103"
+     inkscape:window-y="0"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="layer1" />
+  <defs
+     id="defs5152">
+    <linearGradient
+       id="asayer-logo-a"
+       x1="13.772557"
+       x2="5.7901111"
+       y1="18.34119"
+       y2="21.509182"
+       gradientTransform="scale(0.88742306,1.1268583)"
+       gradientUnits="userSpaceOnUse">
+      <stop
+         offset="0%"
+         stop-color="#028990"
+         id="stop2" />
+      <stop
+         offset="100%"
+         stop-color="#53C1C6"
+         id="stop4" />
+    </linearGradient>
+  </defs>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <g
+       fill="none"
+       id="g17"
+       transform="matrix(7.2061948,0,0,7.2337654,-633.21532,-233.21142)">
+      <g
+         transform="rotate(90,45.05787,77.623087)"
+         id="g13">
+        <path
+           fill="url(#asayer-logo-a)"
+           d="M 8.2861041,13.312111 C 8.117308,13.09123 7.8453454,12.974632 7.5689776,13.004658 c -0.2763678,0.03003 -0.516944,0.202311 -0.6343651,0.45429 L 0.08639831,27.151095 c -0.12684544,0.253718 -0.11328621,0.555022 0.03583586,0.796321 0.14912208,0.241298 0.41254525,0.388187 0.69620429,0.388214 H 10.354225 c 0.312036,0.0072 0.599011,-0.170143 0.73204,-0.452495 2.05699,-4.250542 0.810381,-10.713472 -2.8001609,-14.571024 z"
+           id="path9"
+           style="fill:url(#asayer-logo-a)" />
+        <path
+           fill="#394eff"
+           d="m 17.271407,27.88115 c 0.138631,0.277292 0.422025,0.452495 0.73204,0.452495 h 9.534074 c 0.283659,0 0.547082,-0.146915 0.696204,-0.388214 0.149122,-0.241299 0.162681,-0.542603 0.03584,-0.796321 0,0 -12.826542,-25.6560803 -13.148897,-26.29779268 -0.130056,-0.2665422 -0.40112,-0.43519798 -0.697695,-0.43420497 -0.296576,0.001196 -0.566388,0.17184737 -0.694469,0.43934209 C 10.563801,11.194616 11.744769,20.202848 17.271407,27.88115 Z"
+           id="path11" />
+      </g>
+    </g>
+  </g>
+</svg>

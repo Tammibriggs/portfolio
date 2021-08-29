@@ -1,11 +1,11 @@
 import './index.css'
-import CodeRoundedIcon from '@material-ui/icons/CodeRounded';
+import logo from '../images/logo.png'
 
 function Header(){
   return(
     <header>
       <div className="wrapper">
-      <CodeRoundedIcon id="logo"/>
+      <img src={logo} alt="logo" id="logo"/>
       </div>
     </header>
   )

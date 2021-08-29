@@ -3,17 +3,30 @@
   margin-bottom: 50px;
 }
 
-.email h2{
+.email__head h2{
   text-align: center;
   color: var(--darkcolor1);
   font-size: 1.8rem;
 }
 
-.email > div{
+.email__head h2::after{
+  content: "";
+  width: 45px;
+  height: 5px;
+  display: block;
+  background-color: hsl(59, 88%, 63%);
+  margin: 0 auto;
+}
+
+#email__head__icon{
+  display: none;
+}
+
+.email__form{
   margin-top: 20px;
 }
 
-.email form{
+.email__form form{
   height: 370px;
   padding: 20px 0;
   max-width: 300px;
@@ -23,7 +36,7 @@
   justify-content: space-between;
 }
 
-.email form input{
+.email__form input{
   height: 40px;
   padding-left: 10px;
   font-size: 1.1rem;
@@ -31,11 +44,11 @@
   border-radius: 5px;
 }
 
-.email form input:focus{
+.email__form input:focus{
   box-shadow: 0 0 2px 2px var(--darkcolor2);
 }
 
-.email form textarea{
+.email__form textarea{
   height: 200px;
   padding-left: 10px;
   padding-top: 10px;
@@ -44,22 +57,75 @@
   border-radius: 5px;
 }
 
-.email form textarea:focus{
-  box-shadow: 0 0 2px 2px var(--darkcolor2);
+.email__form textarea:focus{
+  box-shadow: 0 0 1px 1px var(--darkcolor2);
 }
 
-.email form button{
+.email__form button{
   height: 40px;
   background-color: var(--darkcolor2);
   color: var(--lightcolor5);
   border-radius: 5px;
   font-size: 1rem;
+  background-image: linear-gradient(45deg, var(--darkcolor1), transparent);
 }
 
-.email form button:hover{
+.email__form button:hover{
   background-color: var(--darkcolor3);
 }
 
-.email form button:active{
+.email__form button:active{
   background-color: var(--darkcolor2);
+}
+
+@media(min-width: 700px){
+  .email{
+    max-width: 700px;
+    display: flex;
+    height: 220px;
+    background-color: var(--darkcolor2);
+    margin-top: 150px;
+    border-radius: 10px;
+    margin-bottom: 100px;
+    align-items: center;
+    justify-content: center;
+    grid-gap: 30px;
+    background-image: linear-gradient(45deg, var(--darkcolor1), transparent);
+  }
+
+  .email__head{
+    flex: 0.3;
+    text-align: center;
+  }
+
+  .email__head h2{
+    color: var(--lightcolor4);
+    font-size: 1.5rem;
+    font-weight: 400;
+  }
+
+  #email__head__icon{
+    display: inline;
+    font-size: 50px;
+    color: var(--lightcolor4);
+  }
+
+  .email__form{
+    flex: 0.42;
+    margin-top: unset;
+    background-color: white;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 0 2px var(--lightcolor1);
+  }
+
+  .email__form form{
+    padding: unset;
+    height: 330px;
+  }
+
+  .email__form textarea{
+    height: 150px;
+  }
+
 }

@@ -1,30 +1,31 @@
 import medium from '../images/medium.svg'
 import loginradius from '../images/loginradius.png'
+import asayer from '../images/asayer.svg'
 
 const articleData = [
+
   {
-    title: "Understanding Hoisting in JavaScript",
-    tags: ["JavaScript"],
-    intro: `
-    Hoisting is a JavaScript behavior where functions 
-    and variable declarations are given memory space before 
-    code execution.
-    `,
-    publication: "Medium",
-    icon: medium,
-    link: "https://tammibriggs.medium.com/understanding-hoisting-in-javascript-3963d913a5b"
+    title: "Building a Twitter sidebar clone with Matarial-UI and React",
+    tags: ["React"],
+    publication: "Asayer",
+    icon: asayer,
+    link: "https://blog.openreplay.com/building-a-twitter-sidebar-clone-with-material-ui-and-react"
   },
 
   {
-    title: "How to implement Registration and Authentication in DJnago",
+    title: "How to implement Registration and Authentication in DJango",
     tags: ["Django"],
-    intro: `
-    In this tutorial, you will learn how to implement user 
-    registration and authentication in Django using LoginRadius
-    `,
     publication: "LoginRadius",
     icon: loginradius,
     link: "https://www.loginradius.com/blog/async/guest-post/implementing-registration-and-authentication-in-django-using-LoginRadius/"
+  },
+
+  {
+    title: "Understanding Hoisting in JavaScript",
+    tags: ["JavaScript"],
+    publication: "Medium",
+    icon: medium,
+    link: "https://tammibriggs.medium.com/understanding-hoisting-in-javascript-3963d913a5b"
   }
 ]
 

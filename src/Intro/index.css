@@ -7,7 +7,7 @@
   background-image: url("../images/james-harrison-vpOeXr5wmR4-unsplash.jpg");
   background-position: center;
   background-size: cover;
-  background-color: var(--lightcolor1);
+  background-color: var(--darkcolor4);
   background-repeat: no-repeat;
   background-blend-mode: multiply;
 }
@@ -31,7 +31,7 @@
 
 .intro__intro > span:nth-child(3){
   font-size: 1.5rem;
-  color: var(--lightcolor2);
+  color: hsl(59, 88%, 63%);
 }
 
 #intro__intro__button{
@@ -63,4 +63,10 @@
 
 .intro__intro__socialIcons a:hover{
   color: var(--lightcolor3);
+}
+
+@media(min-width: 500px){
+.intro__intro__socialIcons .MuiSvgIcon-root{
+  font-size: 1.8rem;
+}
 }

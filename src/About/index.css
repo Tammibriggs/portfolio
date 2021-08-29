@@ -2,6 +2,11 @@
   margin-top: 100px;
   width: 100%;
   background-color: var(--darkcolor2);
+  background-image: linear-gradient(45deg, var(--darkcolor1), transparent);
+}
+
+.about > h2{
+  display: none;
 }
 
 .about__mobile{
@@ -11,18 +16,21 @@
 }
 
 .about__mobile img{
-  width: 100px;
-  height: 110px;
+  width: 30%;
+  max-width: 150px;
+  max-height: 150px;
   position: relative;
   border-radius: 100%;
-  bottom: 60px;
-  border: 2px solid var(--lightcolor5);
+  bottom: 65px;
+  border: 2px solid hsl(59, 88%, 63%);
 }
 
 .about__mobile p{
   position: relative;
   line-height: 1.7rem;
+  max-width: 600px;
   font-size: 1.1rem;
   bottom: 40px;
   color: var(--lightcolor4);
+  margin: 0 auto;
 }
