@@ -1,6 +1,7 @@
 import saiown_mockup from '../images/saiown_mockup.png'
 import github_repo_page from '../images/github_repo_page.png'
 import amazon_clone from '../images/amazon_clone.png'
+import whatsapp_clone from '../images/whatsapp_clone.png'
 
 const workData = [
   {
@@ -11,6 +12,17 @@ const workData = [
     description: `A clone of Amazon built with React and Express. 
     The app includes features like User Registration, User Authentication, 
     Stripe payment functionality, Shopping cart, and more.`
+  },
+  {
+    image: whatsapp_clone,
+    name: "Whatsapp clone",
+    tags: ["React", "Firebase"],
+    link: "https://whatsapp-clone-3435d.web.app/",
+    description: `
+    A clone of Whatsapp built with React and Firestore. 
+    Rather than using contact, you can use your google account
+    to sign in and chat with other in thesame group with you.
+    `
   },
   {
     image: github_repo_page,
