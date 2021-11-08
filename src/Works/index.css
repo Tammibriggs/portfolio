@@ -5,9 +5,16 @@
 }
 
 .works h2{
-  text-align: center;
   color: var(--darkcolor1);
   font-size: 1.8rem;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.works > p {
+  font-size: 1.4rem;
+  color: var(--darkcolor3);
+  text-align: center;
 }
 
 .works h2::after{
@@ -29,6 +36,14 @@
   .works__flex{
     display: grid;
     grid-template-columns: 1fr 1fr;
+    grid-gap: 30px;
+  }
+}
+
+@media(min-width: 1024px){
+  .works__flex{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
     grid-gap: 30px;
   }
 }

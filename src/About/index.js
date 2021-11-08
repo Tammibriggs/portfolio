@@ -9,9 +9,9 @@ function About(){
         <img src={my_picture} alt="my pic"/>
 
         <p>
-          I am an enthusiastic software developer, soaking up as much knowledge and practice as I can 
-          in an attempt to perfect my craft. I am well-knowledged in UI/UX principles and practices.
-          In addition to software development, I am also a technical writer: simplifying topics/concepts on the web.
+          A Software developer with experience in building Responsive and Scalable Web apps.
+          I am well-knowledged in UI/UX principles and practices.
+          In addition to software development, I am also a technical writer--simplifying topics/concepts on the web.
         </p>
 
       </div>

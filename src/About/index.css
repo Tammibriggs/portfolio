@@ -22,7 +22,7 @@
   position: relative;
   border-radius: 100%;
   bottom: 65px;
-  border: 2px solid hsl(59, 88%, 63%);
+  border: 2px solid white;
 }
 
 .about__mobile p{
