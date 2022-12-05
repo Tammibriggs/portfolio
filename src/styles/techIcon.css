@@ -1,0 +1,20 @@
+.techIcon {
+  padding: 12px;
+  width: 56px;
+  height: 56px;
+  background: rgba(248, 250, 252, 0.6);
+  border: 2px solid rgba(248, 250, 252, 0.6);
+  backdrop-filter: blur(21px);
+  border-radius: 12px;
+  cursor: pointer;
+}
+
+#dark .techIcon {
+  background-color: rgba(30, 41, 59, 0.6);
+  border: 2px solid rgba(51, 65, 85, 0.6);
+}
+
+.techIcon img {
+  width: 28px;
+  height: 32px;
+}

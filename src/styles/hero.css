@@ -1,0 +1,48 @@
+.hero {
+  margin-top: 76px;
+}
+
+.hero h1 {
+  font-weight: 1000;
+  font-size: 48px;
+  color: #1E293B;
+}
+
+#dark .hero h1 {
+  color: #E2E8F0;
+}
+
+.hero span {
+  display: block;
+  color: #334155;
+  font-family: 'Archivo';
+  font-size: 20px;
+  margin-bottom: 14px;
+}
+
+#dark .hero span {
+  color: #E2E8F0;
+}
+
+.hero .socials {
+  margin-top: 20px;
+}
+
+.hero .socials img {
+  width: 25px;
+}
+
+.hero .socials img:hover {
+  transform: scale(1.1);
+}
+
+.hero .socials::after {
+  display: none;
+}
+
+@media(min-width: 650px) {
+  .hero h1 {
+    width: 600px;
+    font-size: 64px;
+  }
+}

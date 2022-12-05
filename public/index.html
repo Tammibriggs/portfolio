@@ -24,9 +24,14 @@
       work correctly both with client-side routing and a non-root public URL.
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
-    <title>React App</title>
+    <title>Portfolio</title>
   </head>
   <body>
+    <form method="POST" data-netlify="true" name="contact_form" netlify-honeypot="bot-field" hidden>
+      <input type="text" placeholder="Name" name="name"/>
+      <input type="email" placeholder="Your email" name="email"/>
+      <textarea placeholder="Message" name="message"></textarea>
+    </form>
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root"></div>
     <!--

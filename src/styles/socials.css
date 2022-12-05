@@ -1,0 +1,38 @@
+.socials {
+  display: none;
+  gap: 24px;
+  align-items: center;
+  flex-direction: column;
+  width: 0;
+  position: absolute;
+  top: 300px;
+}
+
+.socials::after {
+  content:'';
+  display: block;
+  width: 1.5px;
+  height: 150px;
+  background-color: #475569;
+  margin-top: 56px;
+}
+
+#dark .socials::after {
+  background-color: #CBD5E1;
+}
+
+.socials img {
+  width: 20px;
+  height: 20px;
+}
+
+.socials img:hover {
+  transform: scale(1.1);
+}
+
+@media (min-width: 750px) {
+  .socials {
+    display: flex;
+  }
+}
+

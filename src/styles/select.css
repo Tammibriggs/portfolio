@@ -1,0 +1,108 @@
+.select {
+  align-items: center;
+  flex-direction: column;
+  display: flex;
+}
+
+.select button {
+  border: 1px solid gainsboro;
+  background-color: rgb(248,249,250);
+  padding: 5px 15px;
+  display: flex;
+  align-items: center;
+  border-radius: 50px;
+  gap: 5px;
+  height: 40px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+#dark .select button {
+  background-color: #334155;
+  border: none;
+  color: #E2E8F0;
+}
+
+.select button:hover {
+  background-color: transparent;
+}
+
+.select button:active {
+  background-color: rgb(248,249,250);
+}
+
+
+.select button img {
+  width: 15px;
+}
+
+.select__options {
+  box-shadow: 0 0 2px gray;
+  position: absolute;
+  background-color: white;
+  padding: 10px;
+  border-radius: 4px;
+  top: 55px;
+}
+
+#dark .select__options {
+  background-color: #334155;
+}
+
+.select__options div {
+  display: flex;
+  margin-bottom: 10px;
+}
+
+.select__options div:last-child {
+  margin: 0;
+}
+
+.select__options div label {
+  margin-left: 5px;
+  font-size: 16px;
+}
+
+#dark .select__options div label {
+  color: #E2E8F0;
+}
+
+.select__optionButtons button {
+  font-size: 12px;
+  height: 25px;
+  border: none;
+  box-shadow: none;
+}
+
+.select__optionButtons button:first-child {
+  background-color: transparent;
+  margin-right: 10px;
+
+}
+
+.select__optionButtons button:first-child:hover{
+  background-color: rgb(225,231,236);
+}
+
+.select__optionButtons button:last-child {
+  padding: 0px 20px;
+  background-color: rgb(102,137,162);
+  color: white;
+}
+
+.select__optionButtons button:last-child:hover { 
+  color: gainsboro;
+}
+
+@media(min-width: 440px) {
+  .select {
+    display: flex;
+    position: relative;
+  }
+
+  .select__options {
+    left: auto !important;
+    z-index: 1;
+    top: 45px;
+  }
+}

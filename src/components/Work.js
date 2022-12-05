@@ -1,0 +1,68 @@
+import '../styles/work.css'
+import TechIcon from './TechIcon'
+import {useContextValue} from '../context'
+
+function Work({
+  image,
+  name,
+  description,
+  gitHubLink,
+  projectLink,
+  techIcons={dark: [], light: []}
+}) {
+
+  const {isLight} = useContextValue()
+
+  return (
+    <div className='work'>
+      <img src={image} alt='project'/>
+      <div>
+        <h3>{name}</h3>
+        <div className='work__description'>
+          <p>{description}</p>
+        </div>
+        <h4>Technologies used</h4>
+        <div className='work__techs'>
+          {isLight &&
+            <>
+              {techIcons.dark.map((icon) => (
+                <TechIcon icon={icon} />
+              ))}
+            </>
+          }
+          {!isLight &&
+            <>
+              {techIcons.light.map((icon) => (
+                <TechIcon icon={icon} />
+              ))}
+            </>
+          }
+        </div>
+        <div className='works__externalLinks'>
+          {isLight &&
+            <>
+              <a href={gitHubLink}>
+                <img src='/assets/github.png' alt='GitHub'/>
+              </a>
+              <a href={projectLink}>
+                <img src='/assets/external-link.png' alt='external link'/>
+              </a>
+            </>
+          }
+          {!isLight &&
+            <>
+              <a href={gitHubLink}>
+                <img src='/assets/github-light.png' alt='GitHub'/>
+              </a>
+              <a href={projectLink}>
+                <img src='/assets/external-link-light.png' alt='external link'/>
+              </a>
+            </>
+          }
+        </div>
+      </div>
+    </div>
+  )
+}
+
+export default Work

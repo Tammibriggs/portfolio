@@ -1,0 +1,67 @@
+.filter {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  gap: 10px;
+  height: 64px;
+  background: rgba(248, 250, 252, 0.6);
+  border: 2px solid rgba(248, 250, 252, 0.6);
+  border-radius: 24px;
+  position: relative;
+}
+
+#dark .filter {
+  background-color: rgba(30, 41, 59, 0.6);
+  border: 2px solid rgba(30, 41, 59, 0.6)
+}
+
+.filter__options {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  border-radius: 24px;
+  overflow-x: scroll;
+}
+
+.filter__options::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge add Firefox */
+.filter__options {
+  -ms-overflow-style: none;
+  scrollbar-width: none; /* Firefox */
+}
+
+.filter > img {
+  width: 24px;
+  height: 24px;
+}
+
+.filter__options > span {
+  width: 51px; 
+  height: 40px;
+  padding: 8px 16px;
+  background-color: #334155;
+  border-radius: 16px;
+  font-family: 'Archivo';
+  font-size: 16px;
+  color: #F8FAFC;
+  line-height: 24px;
+  cursor: pointer;
+}
+
+#dark .filter__options > span {
+  background-color: inherit;
+}
+
+#dark .filter__options > span:hover {
+  background-color: #334155;
+}
+
+
+@media (min-width: 440px) {
+  .filter__options {
+    overflow: unset;
+  }
+}
