@@ -5,11 +5,98 @@ import Work from '../components/Work';
 import Article from '../components/Article';
 import { Link } from 'react-router-dom';
 import {useContextValue} from '../context'
+import { gql, useQuery } from '@apollo/client';
+import { useEffect, useState } from 'react';
+import Email from '../components/Email'
+
+
+const LIST_FEATURED_PROJECTS = gql`
+  query ListFeaturedProjects($where: DeployedProjectListWhereInput){
+    listDeployedProjects(where: $where) {
+      data {
+        image
+        name
+        description
+        githubLink
+        projectLink
+        techIcons {
+          dark
+          light
+        }
+      }
+    }
+  }
+`
+
+const LIST__ARTICLES = gql`
+  query ListArticles($limit: Int) {
+    listArticles(limit: $limit, sort:createdOn_ASC) {
+      data {
+        image
+        topic
+        publishedDate
+        language
+        tags
+        summary
+      }
+    }
+  }
+`
+
+const LIST__ABOUTS = gql`
+  {
+    listAbouts{
+      data {
+        profileImage
+        technologies {
+        darkIcon {
+          name
+          icon
+        }
+        lightIcon {
+          name
+          icon
+        }
+      }
+        description
+      }
+    }
+  }
+`
 
 function Home() {
 
   const {isLight} = useContextValue()
+  const [projects, setProjects] = useState(null)
+  const [articles, setArticles] = useState(null)
+  const [about, setAbout] = useState(null)
   const arr = [2]
+
+  const {data: aboutData} = useQuery(LIST__ABOUTS)
+
+  const {data} = useQuery(LIST_FEATURED_PROJECTS, {
+    variables: {
+      where: {featured: true}
+    }
+  })
+
+  const {data: articlesData} = useQuery(LIST__ARTICLES, {
+    variables: {
+      limit: 6
+    }
+  })
+
+  useEffect(() => {
+    if(data) {
+      setProjects(data.listDeployedProjects.data)
+    }
+    if(articlesData) {
+      setArticles(articlesData.listArticles.data)
+    }
+    if(aboutData) {
+      setAbout(aboutData.listAbouts.data[0])
+    }
+  }, [data, articlesData, aboutData])
 
   return (
     <div className='home'>
@@ -17,35 +104,32 @@ function Home() {
         text1='👋🏾 Hey there, my name is Taminoturoko Briggs, I’m a'
         text2='Software developer and Technical writer'
       />
-      <About />
+      <div className='wrapper home__about'>
+        <h2 className='section-heading'>About me</h2>
+        <p>Let me introduce myself</p>
+        {about &&
+          <About
+            text={about.description}
+            image={about.profileImage} 
+            technologies={about.technologies}
+          />
+        } 
+      </div>
       <div className='works wrapper'> 
         <h2 className='section-heading'>Things I’ve built</h2>
         <p>Here are some of my featured projects</p>
         <div className='works__list'>
-          <Work 
-            image='/assets/proj.png'
-            name='Halcyon Theme'
-            description='
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-              Ut et massa mi. Aliquam in hendrerit urna. Pellentesque 
-              sit amet sapien fringilla, mattis ligula consectetur.
-            '
-            gitHubLink='/'
-            projectLink='/'
-            techIcons={{dark: ['/assets/react.png', '/assets/react.png'], light: ['/assets/react-light.png', '/assets/react-light.png']}}
-          />
-          <Work 
-            image='/assets/proj.png'
-            name='Halcyon Theme'
-            description='
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-              Ut et massa mi. Aliquam in hendrerit urna. Pellentesque 
-              sit amet sapien fringilla, mattis ligula consectetur.
-            '
-            gitHubLink='/'
-            projectLink='/'
-            techIcons={{dark: ['/assets/react.png', '/assets/react.png'], light: ['/assets/react-light.png', '/assets/react-light.png']}}
-          />
+          {projects && projects.map((project, i) => (
+            <Work 
+              key={i}
+              image={project.image}
+              name={project.name}
+              description={project.description}
+              gitHubLink={project.githubLink}
+              projectLink={project.projectLink}
+              techIcons={project.techIcons}
+            />
+          ))}
         </div>
         <span className='viewMore'>
           View more 
@@ -56,7 +140,7 @@ function Home() {
         <h2 className='section-heading'>Articles I’ve written</h2>
         <p>Browse through my featured collection of articles</p>
         <div className='articles__list'>
-        {[...Array(6).keys()].map((_, i) => {
+        {articles && articles.map((article, i) => {
             let reduceTop = false
             arr.push(arr[i] + 3)
             if(arr.includes(i+1)) reduceTop = true
@@ -64,13 +148,12 @@ function Home() {
             return (
               <Article 
                 key={i}
-                image='assets/proj.png'
+                image={article.image}
                 reduceTop={reduceTop}
-                publishedDate='24th Nov, 2022'
-                tags={['react', 'firebase']}
-                title='Lorem Ipsum dolar sit amet'
-                description='Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-                Ut et massa mi. Aliquam in hendrerit urna.'
+                publishedDate={article.publishedDate}
+                tags={article.tags}
+                title={article.topic}
+                description={article.summary}
               />
             )
           })}          
@@ -82,6 +165,14 @@ function Home() {
             : <img src='/assets/up-right-arrow-light.png' alt='arrow' />
           }
         </Link>
+      </div>
+      <div className='wrapper' style={{maxWidth: '800px'}}>
+        <h2 className='section-heading'>Get in touch</h2>
+        <p>
+          Feel free to contact me if you want to work on a project, 
+          have a content proposal or just to say hi!
+        </p>
+        <Email />
       </div>
     </div>
   )

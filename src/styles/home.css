@@ -32,6 +32,14 @@
   display: none;
 }
 
+.home__about {
+  margin-top: 150px;
+}
+
+.home__about .section-heading {
+  margin-top: inherit;
+}
+
 .viewMore {
   margin-top: 50px;
   display: flex;
@@ -113,7 +121,7 @@
   }
 }
 
-@media(min-width: 870px) {
+@media(min-width: 1024px) {
   .home .hero h1{
     width: 700px;
   }

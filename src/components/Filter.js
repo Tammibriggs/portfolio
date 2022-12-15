@@ -7,7 +7,8 @@ function Filter({
   languages,
   setLanguagues,
   frameworks,
-  setFrameworks
+  setFrameworks,
+  displayAll
 }) {
 
   const {isLight} = useContextValue()
@@ -24,7 +25,7 @@ function Filter({
    useEffect(() => {
     let checkboxes = document.getElementsByClassName('chk')
       for(let i = 0; i < checkboxes.length; i++) {
-        if(selected.includes(checkboxes[i].value)) {
+        if(selected.includes(checkboxes[i].value.toLowerCase())) {
           checkboxes[i].checked = true
         }
       }
@@ -33,8 +34,8 @@ function Filter({
   // Adding checked checkbox to the state and removing unchecked checkbox from the state
   const handleChange = (e, state, setState) => {
     let isChecked = e.target.checked;
-    if(isChecked) setState([...state, e.target.value])
-    else setState(state.filter((option) => option !== e.target.value))
+    if(isChecked) setState([...state, e.target.value.toLowerCase()])
+    else setState(state.filter((option) => option !== e.target.value.toLowerCase()))
   }
 
   const toggleLanguageSelect = () => {
@@ -60,7 +61,9 @@ function Filter({
         : <img src='/assets/filter-light.png' alt='filter'/> 
       }
       <div className='filter__options' ref={filterOptionsElem}>
-        <span>All</span>
+        <span onClick={() => {
+          displayAll()
+        }}>All</span>
         <Select
           filterOptionsElem={filterOptionsElem}
           text='Languages'

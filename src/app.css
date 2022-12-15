@@ -46,7 +46,7 @@
   color: #E2E8F0;
 }
 
-.dark .section-heading + p {
+#dark .section-heading + p {
   color: #E2E8F0;
 }
 

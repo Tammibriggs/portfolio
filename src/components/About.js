@@ -1,41 +1,39 @@
 import '../styles/about.css'
-import TechIcon from './TechIcon'
 import {useContextValue} from '../context'
 
-function About() {
+function About({ technologies={darkIcon: [], lightIcon: []}, text, image}) {
 
   const {isLight} = useContextValue()
     
   return (
-    <div className="about wrapper">
-      <h2>About me</h2>
-      <p>Let me introduce myself</p>
+    <div className="about">
       <div>
-        <img src='/assets/profile.jpg' alt='profile'/>
+        <img src={image} alt='profile'/>
         <div className='about__desc'>
           <p>
-            My name is Taminoturoko Briggs. 
-            I’m a Software developer and Technical writer. Lorem ipsum dolor 
-            sit amet, consectetur adipiscing elit. Ut et massa mi. Aliquam in hendrerit urna.
-            Pellentesque sit amet sapien fringilla, mattis ligula consectetur, ultrices mauris. 
-            Maecenas vitae mattis tellus.
+            {text}
           </p>
-
-          <h3>Favorite technologies</h3>
-          <p>Here are a few of my favorite technologies right now</p>
+          <h3>Technologies</h3>
+          <p>Here are the languages and frameworks i am currently familiar with</p>
           <div className='about__techs'>
             {isLight &&
-              <>
-                <TechIcon icon={'/assets/react.png'} />
-                <TechIcon icon={'/assets/react.png'} />
-                <TechIcon icon={'/assets/react.png'} /> 
+              <>  
+                {technologies.darkIcon.map((icon, i) => (
+                  <div key={i}>
+                    <img src={icon.icon} alt='logo'/>
+                    <span>{icon.name}</span>
+                  </div>
+                ))}
               </>
             }
             {!isLight &&
-              <>
-                <TechIcon icon={'/assets/react-light.png'} />
-                <TechIcon icon={'/assets/react-light.png'} />
-                <TechIcon icon={'/assets/react-light.png'} /> 
+              <>  
+                {technologies.lightIcon.map((icon, i) => (
+                  <div key={i}>
+                    <img src={icon.icon} alt='logo'/>
+                    <span>{icon.name}</span>
+                  </div>
+                ))}
               </>
             }
           </div>

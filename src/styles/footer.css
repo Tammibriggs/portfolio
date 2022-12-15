@@ -68,11 +68,19 @@ footer p {
 }
 
 #dark .footer span {
-  color: #CBD5E1;
+  color: #E2E8F0;
 }
 
 .footer__desktop {
   display: none;
+}
+
+#dark .footer__desktop > div h2{
+  color: #CBD5E1;
+}
+
+#dark .footer__desktop > div p {
+  color: #E2E8F0;
 }
 
 @media (min-width: 870px) {

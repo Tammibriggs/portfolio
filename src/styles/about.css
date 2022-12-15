@@ -1,28 +1,3 @@
-.about {
-  margin-top: 150px;
-}
-
-.about h2 {
-  font-weight: 900;
-  font-size: 22px;
-  color: #1E293B;
-}
-
-#dark h2 {
-  color: #E2E8F0;
-}
-
-.about p {
-  font-family: 'Archivo';
-  font-size: 18px;
-  color: #1E293B;
-  margin-top: 5px;
-}
-
-#dark p {
-  color: #E2E8F0;
-}
-
 .about > div {
   margin-top: 30px;
 }
@@ -58,8 +33,21 @@
 
 .about__techs {
   display: flex;
-  gap: 8px;
+  gap: 20px;
   margin-top: 16px;
+  flex-wrap: wrap;
+  max-width: 400px;
+}
+
+.about__techs > div {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.about__techs > div img{
+  width: 24px;
+  height: 24px;
 }
 
 @media (min-width: 650px) {

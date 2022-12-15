@@ -25,15 +25,15 @@ function Work({
         <div className='work__techs'>
           {isLight &&
             <>
-              {techIcons.dark.map((icon) => (
-                <TechIcon icon={icon} />
+              {techIcons.dark.map((icon, i) => (
+                <TechIcon key={i} icon={icon} />
               ))}
             </>
           }
           {!isLight &&
             <>
-              {techIcons.light.map((icon) => (
-                <TechIcon icon={icon} />
+              {techIcons.light.map((icon, i) => (
+                <TechIcon key={i} icon={icon} />
               ))}
             </>
           }
