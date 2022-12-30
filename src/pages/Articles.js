@@ -44,7 +44,7 @@ const LIST__ARTICLES = gql`
 
 const LIST__TESTIMONIALS = gql`
   {
-    listTestimonials(sort:createdOn_ASC) {
+    listTestimonials {
       data {
         text
         name
