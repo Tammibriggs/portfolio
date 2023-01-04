@@ -1,12 +1,14 @@
 .techIcon {
-  padding: 12px;
-  width: 56px;
-  height: 56px;
+  padding: 9px;
+  width: 50px;
+  height: 50px;
   background: rgba(248, 250, 252, 0.6);
   border: 2px solid rgba(248, 250, 252, 0.6);
   backdrop-filter: blur(21px);
   border-radius: 12px;
-  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 #dark .techIcon {
@@ -15,6 +17,14 @@
 }
 
 .techIcon img {
-  width: 28px;
+  width: 32px;
   height: 32px;
+}
+
+@media(min-width: 850px) {
+  .techIcon {
+    padding: 12px;
+    width: 56px;
+    height: 56px;
+  }
 }

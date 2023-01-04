@@ -12,7 +12,7 @@ import Email from '../components/Email'
 
 const LIST_FEATURED_PROJECTS = gql`
   query ListFeaturedProjects($where: DeployedProjectListWhereInput){
-    listDeployedProjects(where: $where) {
+    listDeployedProjects(where: $where, sort:createdOn_ASC) {
       data {
         image
         name
@@ -38,6 +38,7 @@ const LIST__ARTICLES = gql`
         language
         tags
         summary
+        link
       }
     }
   }
@@ -154,6 +155,7 @@ function Home() {
                 tags={article.tags}
                 title={article.topic}
                 description={article.summary}
+                link={article.link}
               />
             )
           })}          

@@ -15,7 +15,14 @@ function Work({
 
   return (
     <div className='work'>
-      <img src={image} alt='project'/>
+      <div 
+      style={{
+        backgroundImage: `url(${image})`,
+        backgroundSize: 'cover',
+        backgroundRepeat: 'no-repeat',
+        backgroundPosition: 'center',
+      }} 
+      className='work__img'></div>
       <div>
         <h3>{name}</h3>
         <div className='work__description'>
