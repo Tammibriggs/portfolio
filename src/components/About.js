@@ -13,8 +13,8 @@ function About({ technologies={darkIcon: [], lightIcon: []}, text, image}) {
           <p>
             {text}
           </p>
-          <h3>Technologies</h3>
-          <p>Here are the languages and frameworks i am currently familiar with</p>
+          <h3>Favorite technologies</h3>
+          <p>Here are a few of my favorite technologies and tools right now</p>
           <div className='about__techs'>
             {isLight &&
               <>  

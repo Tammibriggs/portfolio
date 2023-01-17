@@ -12,7 +12,7 @@ import { ContextProvider } from './context';
 
 function App() {
 
-  const [isLight, setIsLight] = useState(true)
+  const [isLight, setIsLight] = useState(false)
 
   return (
     <div className="app" id={isLight ? 'light' : 'dark'}>

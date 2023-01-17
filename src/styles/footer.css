@@ -16,6 +16,14 @@ footer h2 {
   font-size: 28px;
 }
 
+#dark footer h2 {
+  color: #CBD5E1;
+}
+
+#dark footer p {
+  color: #E2E8F0;
+}
+
 footer p {
   font-family: 'Archivo';
   font-size: 18px;

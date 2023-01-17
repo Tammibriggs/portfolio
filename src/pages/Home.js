@@ -103,11 +103,11 @@ function Home() {
     <div className='home'>
       <Hero 
         text1='👋🏾 Hey there, my name is Taminoturoko Briggs, I’m a'
-        text2='Software developer and Technical writer'
+        text2='React developer and Technical writer'
       />
       <div className='wrapper home__about'>
         <h2 className='section-heading'>About me</h2>
-        <p>Let me introduce myself</p>
+        {/* <p>Let me introduce myself</p> */}
         {about &&
           <About
             text={about.description}
