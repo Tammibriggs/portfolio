@@ -48,10 +48,10 @@ function Work({
         <div className='works__externalLinks'>
           {isLight &&
             <>
-              <a href={gitHubLink}>
+              <a href={gitHubLink} target='_blank' rel="noreferrer">
                 <img src='/assets/github.png' alt='GitHub'/>
               </a>
-              <a href={projectLink}>
+              <a href={projectLink} target='_blank' rel="noreferrer">
                 <img src='/assets/external-link.png' alt='external link'/>
               </a>
             </>

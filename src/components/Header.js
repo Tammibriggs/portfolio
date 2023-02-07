@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import '../styles/header.css'
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import {useContextValue} from '../context'
 
 function Header() {
@@ -13,9 +13,9 @@ function Header() {
       <header className={isNavOpen ? 'navOpened' : ''} >
         <h2>TammiBriggs</h2>
         <nav>
-          <Link to="/">Home</Link>
-          <Link to="blog">Articles</Link>
-          <Link to="contact">Contact</Link>
+          <NavLink to="/">Home</NavLink>
+          <NavLink to="blog">Articles</NavLink>
+          <NavLink to="contact">Contact</NavLink>
         </nav>
         <div>
           {isLight 
@@ -67,9 +67,9 @@ function Header() {
         </div>
       </header>
       <nav className={`wrapper mobileNav ${isNavOpen && 'mobileNavOpen'}`}>
-        <Link to="/">Home</Link>
-        <Link to="blog">Articles</Link>
-        <Link to="contact">Contact</Link>
+        <NavLink to="/">Home</NavLink>
+        <NavLink to="blog">Articles</NavLink>
+        <NavLink to="contact">Contact</NavLink>
       </nav>
     </>
   )

@@ -30,13 +30,12 @@ const LIST_FEATURED_PROJECTS = gql`
 
 const LIST__ARTICLES = gql`
   query ListArticles($limit: Int) {
-    listArticles(limit: $limit, sort:createdOn_ASC) {
+    listFeaturedHomeArticles(limit: $limit, sort:createdOn_DESC) {
       data {
         image
         topic
         publishedDate
-        language
-        tags
+        tag
         summary
         link
       }
@@ -92,7 +91,7 @@ function Home() {
       setProjects(data.listDeployedProjects.data)
     }
     if(articlesData) {
-      setArticles(articlesData.listArticles.data)
+      setArticles(articlesData.listFeaturedHomeArticles.data)
     }
     if(aboutData) {
       setAbout(aboutData.listAbouts.data[0])
@@ -102,7 +101,7 @@ function Home() {
   return (
     <div className='home'>
       <Hero 
-        text1='👋🏾 Hey there, my name is Taminoturoko Briggs, I’m a'
+        text1='👋🏾 Hey, my name is Taminoturoko Briggs, I’m a'
         text2='React developer and Technical writer'
       />
       <div className='wrapper home__about'>
@@ -152,7 +151,7 @@ function Home() {
                 image={article.image}
                 reduceTop={reduceTop}
                 publishedDate={article.publishedDate}
-                tags={article.tags}
+                tags={article.tag}
                 title={article.topic}
                 description={article.summary}
                 link={article.link}
