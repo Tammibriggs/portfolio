@@ -1,20 +1,75 @@
 #light {
-  background-image: url('/public/assets/home1.png'), url('/public/assets/background-top.png'), url('/public/assets/background-bottom.png');
+  /* background-image: url('/public/assets/home1.png'), url('/public/assets/background-top.png'), url('/public/assets/background-bottom.png'); */
   background-repeat: no-repeat;
   background-size: cover, 100% 1000px, 100% 1100px;
   background-position: 100%, top, bottom;
   background-blend-mode: darken;
-  background-color: #F1F5F9;
+  background-color: #e2e8f0;
   overflow: hidden;
 }
 
 #dark {
-  background-image: url('/public/assets/background-dark.png'), url('/public/assets/background-dark-top.png'), url('/public/assets/background-dark-bottom.png');
+  /* background-image: url('/public/assets/background-dark.png'), url('/public/assets/background-dark-top.png'), url('/public/assets/background-dark-bottom.png'); */
   background-repeat: no-repeat;
   background-size: cover, 100% 1000px, 100% 1100px;
   background-position: 100%, top, bottom;
-  background-color: #111827;
+  background-color: #0e1522;
   overflow: hidden;
+}
+
+.loader {
+  width: 108px;
+  height: 16px;
+  margin: 0 auto;
+  background: radial-gradient(
+      circle 8px at 8px center,
+      #fff 100%,
+      transparent 0
+    ),
+    radial-gradient(circle 8px at 8px center, #fff 100%, transparent 0);
+  background-size: 16px 16px;
+  background-repeat: no-repeat;
+  position: relative;
+  animation: ballX 1s linear infinite;
+}
+
+.loader:before {
+  content: "";
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: #fff;
+  inset: 0;
+  margin: auto;
+  animation: moveX 1s cubic-bezier(0.5, 300, 0.5, -300) infinite;
+}
+
+.loader--mod {
+  display: block;
+  margin-top: 64px;
+}
+
+@keyframes ballX {
+  0%,
+  25%,
+  50%,
+  75%,
+  100% {
+    background-position: 25% 0, 75% 0;
+  }
+  40% {
+    background-position: 25% 0, 85% 0;
+  }
+  90% {
+    background-position: 15% 0, 75% 0;
+  }
+}
+
+@keyframes moveX {
+  100% {
+    transform: translate(0.15px);
+  }
 }
 
 .container {
@@ -37,36 +92,40 @@
 }
 
 .active {
+  border-bottom: 1px solid black;
+}
+
+#dark .active {
   border-bottom: 1px solid white;
 }
 
 .section-heading + p {
   font-size: 18px;
-  font-family: 'Archivo';
+  font-family: "Archivo";
   margin-top: 5px;
 }
 
 #dark .section-heading {
-  color: #E2E8F0;
+  color: #e2e8f0;
 }
 
 #dark .section-heading + p {
-  color: #E2E8F0;
+  color: #e2e8f0;
 }
 
-@media(min-width: 650px) {
+@media (min-width: 650px) {
   .section-heading {
     margin-top: 150px;
   }
 }
 
-@media(min-width: 750px) {
+@media (min-width: 750px) {
   .wrapper {
-   width: 90%;
+    width: 90%;
   }
-} 
+}
 
-@media(min-width: 1024px) {
+@media (min-width: 1024px) {
   .section-heading {
     margin-top: 200px;
   }

@@ -42,22 +42,26 @@ const LIST__ARTICLES = gql`
   }
 `;
 
-const LIST__TESTIMONIALS = gql`
+const testimonials = [
   {
-    listTestimonials {
-      data {
-        text
-        name
-        image
-        position
-      }
-    }
-  }
-`;
+    text: `Throughout the 4 articles you wrote for Webiny, your output was consistent and thorough. 
+    You delivered 4 different articles, each in a timely manner and without needing much support from the team.`,
+    name: "Benjamin Read",
+    image: "https://d1c1is561xqptz.cloudfront.net/files/8lbuhfvhy-bens.jpg",
+    position: "Formerly in Developer Relations at Webiny",
+  },
+  {
+    text: `I have worked with Taminoturoko as an editor at the LogRocket blog for a little over a year. 
+    In that time period, he has written 6 blog posts for us centered around React. His articles are always thorough and well-written, 
+    receiving positive feedback in the comments section from our readers.`,
+    name: "Elena Allison",
+    image: "https://d1c1is561xqptz.cloudfront.net/files/8lcale1z2-elena.jpg",
+    position: "Former Content Editor at LogRocket",
+  },
+];
 
 function Articles() {
   const [limit, setLimit] = useState(6);
-  const { data: testimonialsData } = useQuery(LIST__TESTIMONIALS);
   const { data: featured } = useQuery(LIST__FEATURED__ARTICLES);
   const { data, loading } = useQuery(LIST__ARTICLES, {
     variables: {
@@ -66,15 +70,13 @@ function Articles() {
   });
 
   const [windowWidth, setWindowWidth] = useState(0);
-  const [articles, setArticles] = useState([]);
-  const [testimonials, setTestimonials] = useState([]);
-  const [filteredArticles, setFilteredArticles] = useState([]);
+  const [articles, setArticles] = useState(null);
+  const [filteredArticles, setFilteredArticles] = useState(null);
   const [featuredArticles, setFeaturedArticles] = useState(null);
 
   const [searchValue, setSearchValue] = useState("");
   const [languages, setLanguagues] = useState([]);
   const [frameworks, setFrameworks] = useState([]);
-  const arr = [2];
 
   const windowWidthSetter = () => {
     setWindowWidth(document.body.clientWidth);
@@ -88,10 +90,8 @@ function Articles() {
   };
 
   useEffect(() => {
-    if (testimonialsData) {
-      setTestimonials(testimonialsData.listTestimonials.data);
-    }
-  }, [testimonialsData]);
+    document.title = "Articles";
+  }, []);
 
   // filter by language and frameworks
   useEffect(() => {
@@ -172,8 +172,8 @@ function Articles() {
       <div className="wrapper">
         <h2 className="section-heading">Featured articles</h2>
         <p>Here are some of my recently featured articles</p>
-        <div className="featured__list">
-          {featuredArticles && (
+        {featuredArticles ? (
+          <div className="featured__list">
             <>
               <Article
                 link={featuredArticles[0].link}
@@ -204,8 +204,10 @@ function Articles() {
                 />
               </div>
             </>
-          )}
-        </div>
+          </div>
+        ) : (
+          <span className="loader loader--mod"></span>
+        )}
       </div>
 
       <div className="wrapper">
@@ -221,41 +223,47 @@ function Articles() {
             setFrameworks={setFrameworks}
           />
         </div>
-        <div className="articles__list">
-          {filteredArticles &&
-            filteredArticles.map((article, i) => {
-              let reduceTop = false;
-              arr.push(arr[i] + 3);
-              if (arr.includes(i + 1)) reduceTop = true;
-              else reduceTop = false;
-              return (
-                <Article
-                  key={i}
-                  reduceTop={reduceTop}
-                  image={article.image}
-                  publishedDate={article.publishedDate}
-                  tags={article.tags}
-                  title={article.topic}
-                  description={article.summary}
-                  link={article.link}
-                />
-              );
-            })}
-        </div>
-        <button
-          className="loadMore"
-          disabled={!data?.listArticles.meta?.hasMoreItems && true}
-          style={{
-            cursor: `${
-              data?.listArticles.meta?.hasMoreItems ? "pointer" : "unset"
-            }`,
-          }}
-          onClick={() => {
-            setLimit(limit + 6);
-          }}
-        >
-          {loading ? "Loading..." : "Load more"}
-        </button>
+        {filteredArticles ? (
+          <>
+            <div className="articles__list">
+              {filteredArticles.map((article, i) => {
+                let arr = [2];
+                let reduceTop = false;
+                arr.push(arr[i] + 3);
+                if (arr.includes(i + 1)) reduceTop = true;
+                else reduceTop = false;
+                return (
+                  <Article
+                    key={i}
+                    reduceTop={reduceTop} //  Makes article list look wavey
+                    image={article.image}
+                    publishedDate={article.publishedDate}
+                    tags={article.tags}
+                    title={article.topic}
+                    description={article.summary}
+                    link={article.link}
+                  />
+                );
+              })}
+            </div>
+            <button
+              className="loadMore"
+              disabled={!data?.listArticles.meta?.hasMoreItems && true}
+              style={{
+                cursor: `${
+                  data?.listArticles.meta?.hasMoreItems ? "pointer" : "unset"
+                }`,
+              }}
+              onClick={() => {
+                setLimit(limit + 6);
+              }}
+            >
+              {loading ? "Loading..." : "Load more"}
+            </button>
+          </>
+        ) : (
+          <span className="loader loader--mod"></span>
+        )}
       </div>
     </div>
   );

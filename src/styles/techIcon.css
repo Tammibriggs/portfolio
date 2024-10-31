@@ -19,9 +19,10 @@
 .techIcon img {
   width: 32px;
   height: 32px;
+  object-fit: contain;
 }
 
-@media(min-width: 850px) {
+@media (min-width: 850px) {
   .techIcon {
     padding: 12px;
     width: 56px;
