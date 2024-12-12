@@ -6,15 +6,21 @@ import Articles from "./pages/Articles";
 import Contact from "./pages/Contact";
 import Socials from "./components/Socials";
 import Footer from "./components/Footer";
-import Projects from "./pages/Projects";
 import { useState } from "react";
 import { ContextProvider } from "./context";
 import ReactGA from "react-ga4";
+import Hotjar from '@hotjar/browser';
+
 
 const GOOGLE_ANALYTICS_ID = process.env.REACT_APP_GOOGLE_ANALYTICS_ID
+const HOTJAR_SITE_ID = process.env.REACT_APP_HOTJAR_SITE_ID;
 
-if (process.env.NODE_ENV === "production" && GOOGLE_ANALYTICS_ID) {
-  ReactGA.initialize(GOOGLE_ANALYTICS_ID);
+if (process.env.NODE_ENV === "production") {
+  if(GOOGLE_ANALYTICS_ID) ReactGA.initialize(GOOGLE_ANALYTICS_ID);
+  if(HOTJAR_SITE_ID) {
+    const hotjarVersion = 6;
+    Hotjar.init(HOTJAR_SITE_ID, hotjarVersion);
+  }
 }
 
 function App() {

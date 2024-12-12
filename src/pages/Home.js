@@ -51,6 +51,7 @@ function getWindowDimensions() {
 }
 
 function Home() {
+  let arr = [2];
   const { isLight } = useContextValue();
   const [windowDimensions, setWindowDimensions] = useState(
     getWindowDimensions()
@@ -108,7 +109,7 @@ function Home() {
     <div className="home">
       <Hero
         text1="👋🏾 Hey, my name is Taminoturoko Briggs, I’m a"
-        text2="React developer and Technical writer"
+        text2="Web developer & Technical writer"
       />
       <div className="wrapper home__about">
         <h2 className="section-heading">About me</h2>
@@ -120,7 +121,7 @@ function Home() {
         {projects ? (
           <>
             <div className="works__list">
-              {projects.map((project, i) => (
+              {projects.slice(0, 2).map((project, i) => (
                 <Work
                   key={i}
                   image={project.image}
@@ -143,13 +144,12 @@ function Home() {
         )}
       </div>
       <div className="articles wrapper">
-        <h2 className="section-heading">Articles I’ve written</h2>
+        <h2 className="section-heading">Articles I've written</h2>
         <p>Browse through my featured collection of articles</p>
         {articles ? (
           <>
             <div className="articles__list">
               {articles.map((article, i) => {
-                let arr = [2];
                 let reduceTop = false;
                 arr.push(arr[i] + 3);
                 if (arr.includes(i + 1)) reduceTop = true;

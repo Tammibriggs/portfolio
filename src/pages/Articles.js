@@ -61,6 +61,7 @@ const testimonials = [
 ];
 
 function Articles() {
+  let arr = [2];
   const [limit, setLimit] = useState(6);
   const { data: featured } = useQuery(LIST__FEATURED__ARTICLES);
   const { data, loading } = useQuery(LIST__ARTICLES, {
@@ -227,11 +228,10 @@ function Articles() {
           <>
             <div className="articles__list">
               {filteredArticles.map((article, i) => {
-                let arr = [2];
                 let reduceTop = false;
                 arr.push(arr[i] + 3);
                 if (arr.includes(i + 1)) reduceTop = true;
-                else reduceTop = false;
+                // else reduceTop = false;
                 return (
                   <Article
                     key={i}

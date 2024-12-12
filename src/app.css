@@ -17,6 +17,10 @@
   overflow: hidden;
 }
 
+p {
+  line-height: 24px;
+}
+
 .loader {
   width: 108px;
   height: 16px;
@@ -103,6 +107,7 @@
   font-size: 18px;
   font-family: "Archivo";
   margin-top: 5px;
+  color: #1E293B;
 }
 
 #dark .section-heading {
