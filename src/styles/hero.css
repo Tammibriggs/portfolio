@@ -52,3 +52,10 @@
     font-size: 64px;
   }
 }
+
+@media (max-width: 600px) {
+  .hero span {
+    font-size: 16px;
+    margin-bottom: 6px;
+  }
+}

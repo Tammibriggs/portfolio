@@ -9,18 +9,17 @@ import Footer from "./components/Footer";
 import { useState } from "react";
 import { ContextProvider } from "./context";
 import ReactGA from "react-ga4";
-import Hotjar from '@hotjar/browser';
+// import Hotjar from '@hotjar/browser';
 
-
-const GOOGLE_ANALYTICS_ID = process.env.REACT_APP_GOOGLE_ANALYTICS_ID
-const HOTJAR_SITE_ID = process.env.REACT_APP_HOTJAR_SITE_ID;
+const GOOGLE_ANALYTICS_ID = process.env.REACT_APP_GOOGLE_ANALYTICS_ID;
+// const HOTJAR_SITE_ID = process.env.REACT_APP_HOTJAR_SITE_ID;
 
 if (process.env.NODE_ENV === "production") {
-  if(GOOGLE_ANALYTICS_ID) ReactGA.initialize(GOOGLE_ANALYTICS_ID);
-  if(HOTJAR_SITE_ID) {
-    const hotjarVersion = 6;
-    Hotjar.init(HOTJAR_SITE_ID, hotjarVersion);
-  }
+  if (GOOGLE_ANALYTICS_ID) ReactGA.initialize(GOOGLE_ANALYTICS_ID);
+  // if(HOTJAR_SITE_ID) {
+  //   const hotjarVersion = 6;
+  //   Hotjar.init(HOTJAR_SITE_ID, hotjarVersion);
+  // }
 }
 
 function App() {

@@ -109,12 +109,37 @@ function Home() {
     <div className="home">
       <Hero
         text1="👋🏾 Hey, my name is Taminoturoko Briggs, I’m a"
-        text2="Web developer & Technical writer"
+        text2="Software developer & Technical writer"
       />
       <div className="wrapper home__about">
         <h2 className="section-heading">About me</h2>
         <About />
       </div>
+      <a
+        className="autodoc-card"
+        href="https://dev.to/tammibriggs/automate-doc-maintenance-detect-and-update-outdated-docs-using-algolia-mcp-server-n8n-and-llm-5bf7"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        {/* Emoji Section */}
+        <div className="emoji-wrapper">
+          <span className="autodoc-card-emoji" role="img" aria-label="Trophy">
+            🏆
+          </span>
+        </div>
+
+        {/* Content Section */}
+        <div className="autodoc-card-content">
+          <h2 className="autodoc-card-title">
+            AutoDoc: Keep Docs in sync with code changes
+          </h2>
+          <p className="autodoc-card-desc">
+            <span>Algolia MCP Server Challenge</span>
+            <span className="desc-separator"></span>
+            <span>July 27</span>
+          </p>
+        </div>
+      </a>
       <div className="works wrapper">
         <h2 className="section-heading">Things I’ve built</h2>
         <p>Here are some of my featured projects</p>
