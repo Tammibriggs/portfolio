@@ -8,6 +8,9 @@ import { useContextValue } from "../context";
 import { gql, useQuery } from "@apollo/client";
 import { useEffect, useState } from "react";
 import Email from "../components/Email";
+import Hackathon from "../components/Hackathon";
+import Experience from "../components/Experience";
+import localProjects from "../data/projects";
 
 const LIST_FEATURED_PROJECTS = gql`
   query ListFeaturedProjects($where: DeployedProjectListWhereInput) {
@@ -56,15 +59,17 @@ function Home() {
   const [windowDimensions, setWindowDimensions] = useState(
     getWindowDimensions()
   );
-  const [projects, setProjects] = useState(null);
+  const [projects, setProjects] = useState(localProjects);
   const [articles, setArticles] = useState(null);
   const [articlesLength, setArticlesLength] = useState(2);
 
-  const { data } = useQuery(LIST_FEATURED_PROJECTS, {
-    variables: {
-      where: { featured: true },
-    },
-  });
+
+  // Temporarily disabled while using local project data.
+  // const { data } = useQuery(LIST_FEATURED_PROJECTS, {
+  //   variables: {
+  //     where: { featured: true },
+  //   },
+  // });
 
   const { data: articlesData } = useQuery(LIST__ARTICLES, {
     variables: {
@@ -74,7 +79,7 @@ function Home() {
 
   useEffect(() => {
     document.title =
-      "Taminoturoko Briggs | React Devevloper & Technical writer";
+      "Taminoturoko Briggs | Fullstack Devevloper & Technical writer";
   }, []);
 
   useEffect(() => {
@@ -92,11 +97,11 @@ function Home() {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
-  useEffect(() => {
-    if (data) {
-      setProjects(data.listDeployedProjects.data);
-    }
-  }, [data]);
+  // useEffect(() => {
+  //   if (data) {
+  //     setProjects(data.listDeployedProjects.data);
+  //   }
+  // }, [data]);
 
   useEffect(() => {
     if (articlesData) {
@@ -109,47 +114,26 @@ function Home() {
     <div className="home">
       <Hero
         text1="👋🏾 Hey, my name is Taminoturoko Briggs, I’m a"
-        text2="Software developer & Technical writer"
+        text2="Fullstack developer & Technical writer"
       />
       <div className="wrapper home__about">
         <h2 className="section-heading">About me</h2>
         <About />
       </div>
-      <a
-        className="autodoc-card"
-        href="https://dev.to/tammibriggs/automate-doc-maintenance-detect-and-update-outdated-docs-using-algolia-mcp-server-n8n-and-llm-5bf7"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        {/* Emoji Section */}
-        <div className="emoji-wrapper">
-          <span className="autodoc-card-emoji" role="img" aria-label="Trophy">
-            🏆
-          </span>
-        </div>
 
-        {/* Content Section */}
-        <div className="autodoc-card-content">
-          <h2 className="autodoc-card-title">
-            AutoDoc: Keep Docs in sync with code changes
-          </h2>
-          <p className="autodoc-card-desc">
-            <span>Algolia MCP Server Challenge</span>
-            <span className="desc-separator"></span>
-            <span>July 27</span>
-          </p>
-        </div>
-      </a>
+      <Hackathon />
+
       <div className="works wrapper">
         <h2 className="section-heading">Things I’ve built</h2>
-        <p>Here are some of my featured projects</p>
+        <p>Here are some of my favorite projects</p>
         {projects ? (
           <>
             <div className="works__list">
-              {projects.slice(0, 2).map((project, i) => (
+              {projects.slice(0, 4).map((project, i) => (
                 <Work
                   key={i}
                   image={project.image}
+                  video={project.video}
                   name={project.name}
                   description={project.description}
                   gitHubLink={project.githubLink}
@@ -168,6 +152,9 @@ function Home() {
           <span className="loader loader--mod"></span>
         )}
       </div>
+
+      <Experience />
+
       <div className="articles wrapper">
         <h2 className="section-heading">Articles I've written</h2>
         <p>Browse through my featured collection of articles</p>

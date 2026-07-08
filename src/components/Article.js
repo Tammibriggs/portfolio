@@ -23,8 +23,8 @@ function Article({
               backgroundSize: "cover",
               backgroundRepeat: "no-repeat",
               backgroundPosition: "center",
-              backgroundColor: "#16e5ff5e",
-              backgroundBlendMode: "luminosity",
+              // backgroundColor: "#16e5ff5e",
+              // backgroundBlendMode: "luminosity",
             }}
             className="article__img"
           />

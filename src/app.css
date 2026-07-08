@@ -1,5 +1,5 @@
 #light {
-  /* background-image: url('/public/assets/home1.png'), url('/public/assets/background-top.png'), url('/public/assets/background-bottom.png'); */
+  background-image: url('/public/assets/background-light.webp'), url('/public/assets/background-top.webp'), url('/public/assets/background-bottom.webp');
   background-repeat: no-repeat;
   background-size: cover, 100% 1000px, 100% 1100px;
   background-position: 100%, top, bottom;
@@ -9,7 +9,7 @@
 }
 
 #dark {
-  /* background-image: url('/public/assets/background-dark.png'), url('/public/assets/background-dark-top.png'), url('/public/assets/background-dark-bottom.png'); */
+  background-image: url('/public/assets/background-dark.png'), url('/public/assets/background-dark-top.webp'), url('/public/assets/background-dark-bottom.webp');
   background-repeat: no-repeat;
   background-size: cover, 100% 1000px, 100% 1100px;
   background-position: 100%, top, bottom;
@@ -25,11 +25,9 @@ p {
   width: 108px;
   height: 16px;
   margin: 0 auto;
-  background: radial-gradient(
-      circle 8px at 8px center,
+  background: radial-gradient(circle 8px at 8px center,
       #fff 100%,
-      transparent 0
-    ),
+      transparent 0),
     radial-gradient(circle 8px at 8px center, #fff 100%, transparent 0);
   background-size: 16px 16px;
   background-repeat: no-repeat;
@@ -55,6 +53,7 @@ p {
 }
 
 @keyframes ballX {
+
   0%,
   25%,
   50%,
@@ -62,9 +61,11 @@ p {
   100% {
     background-position: 25% 0, 75% 0;
   }
+
   40% {
     background-position: 25% 0, 85% 0;
   }
+
   90% {
     background-position: 15% 0, 75% 0;
   }
@@ -103,7 +104,7 @@ p {
   border-bottom: 1px solid white;
 }
 
-.section-heading + p {
+.section-heading+p {
   font-size: 18px;
   font-family: "Archivo";
   margin-top: 5px;
@@ -114,11 +115,11 @@ p {
   color: #e2e8f0;
 }
 
-#dark .section-heading + p {
+#dark .section-heading+p {
   color: #e2e8f0;
 }
 
-@media (min-width: 650px) {
+@media (min-width: 640px) {
   .section-heading {
     margin-top: 150px;
   }

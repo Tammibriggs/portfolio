@@ -23,7 +23,7 @@ function Footer() {
               <a href='https://www.linkedin.com/in/taminoturoko-briggs-b98251203/'>LinkedIn</a>
               <a href='https://twitter.com/Tammibr25891504'>Twitter</a>
             </nav>
-          </div> 
+          </div>
         </div>
         <span>Designed by Miracle, Bult by Tammibriggs. With 💖</span>
         <span>© 2022, Tammibrigs</span>
@@ -32,11 +32,11 @@ function Footer() {
       <div className='footer__desktop'>
         <div>
           <h2>Tammibriggs</h2>
-          <p>Software Devloper & Technical writer</p>
-          <span>Designed by Miracle, Bult by Tammibriggs. With 💖</span>
+          <p>Fullstack Devloper & Technical writer</p>
+          {/* <span>Designed by Miracle, Bult by Tammibriggs. With 💖</span> */}
           <span>© 2022, Tammibrigs</span>
         </div>
-     
+
         <div className='footer__navs'>
           <div>
             <h3>Site</h3>
@@ -44,7 +44,7 @@ function Footer() {
               <Link to='/'>Home</Link>
               <Link to='/blog'>Articles</Link>
               <Link to='/contact'>Contacts</Link>
-            </nav> 
+            </nav>
           </div>
           <div>
             <h3>Socials</h3>
@@ -54,7 +54,7 @@ function Footer() {
               <a href='https://twitter.com/Tammibr25891504'>Twitter</a>
             </nav>
           </div>
-          
+
         </div>
       </div>
     </footer>

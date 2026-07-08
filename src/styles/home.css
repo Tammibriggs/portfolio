@@ -32,14 +32,6 @@
   display: none;
 }
 
-.home__about {
-  margin-top: 150px;
-}
-
-.home__about .section-heading {
-  margin-top: inherit;
-}
-
 .viewMore {
   margin-top: 50px;
   display: flex;
@@ -85,10 +77,6 @@
 
 .works {
   color: #1e293b;
-}
-
-.works .section-heading {
-  margin-top: 80px;
 }
 
 .works__list {
@@ -143,201 +131,318 @@
   }
 }
 
-@keyframes shimmer {
-  0% {
-    background-position: -200% center;
-  }
-  100% {
-    background-position: 200% center;
-  }
-}
-
-@keyframes float {
-  0%,
-  100% {
-    transform: translateY(0px);
-  }
-  50% {
-    transform: translateY(-4px);
-  }
-}
-
-.autodoc-card {
-  position: relative;
-  display: flex;
-  max-width: 600px;
-  margin: 0 auto;
-  gap: 16px;
-  align-items: center;
-  margin-top: 80px;
-  padding: 24px 32px;
-  border-radius: 100px;
-  background: linear-gradient(
-    135deg,
-    rgba(255, 255, 255, 0.6) 0%,
-    rgba(255, 255, 255, 0.6) 100%
-  );
-  border: 1px solid rgba(79, 70, 229, 0.2);
-  box-shadow: 0 4px 24px -2px rgba(79, 70, 229, 0.12),
-    0 0 0 1px rgba(255, 255, 255, 0.8) inset,
-    0 8px 32px -8px rgba(0, 0, 0, 0.08);
-  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+.hackathon--link {
+  display: block;
+  text-decoration: none;
+  color: inherit;
   cursor: pointer;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.hackathon--link:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 24px 48px rgba(0, 0, 0, 0.07);
+}
+
+#dark .hackathon--link:hover {
+  box-shadow: 0 24px 48px rgba(0, 0, 0, 0.3);
+}
+
+.hackathon {
+  margin-top: 100px;
+  text-align: center;
   overflow: hidden;
+  background: rgba(248, 250, 252, 0.45);
+  border: 2px solid rgba(248, 250, 252, 0.5);
   backdrop-filter: blur(21px);
   -webkit-backdrop-filter: blur(21px);
+  border-radius: 32px;
+  padding: 40px 24px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.015);
+  position: relative;
+  background-image: radial-gradient(circle at 10% 20%, rgba(254, 240, 138, 0.04) 0%, transparent 40%),
+                    radial-gradient(circle at 90% 80%, rgba(254, 240, 138, 0.02) 0%, transparent 40%);
 }
 
-.autodoc-card::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: linear-gradient(
-    90deg,
-    transparent,
-    rgba(79, 70, 229, 0.08),
-    transparent
-  );
-  background-size: 200% 100%;
-  animation: shimmer 3s infinite;
-  opacity: 0;
-  transition: opacity 0.3s;
+#dark .hackathon {
+  background: rgba(30, 41, 59, 0.35);
+  border: 2px solid rgba(51, 65, 85, 0.4);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+  background-image: radial-gradient(circle at 10% 20%, rgba(253, 224, 71, 0.02) 0%, transparent 40%),
+                    radial-gradient(circle at 90% 80%, rgba(253, 224, 71, 0.015) 0%, transparent 40%);
 }
 
-.autodoc-card:hover::before {
-  opacity: 1;
-}
+.hackathon__row {
+  --hackathon-text-width: 500px;
+  --hackathon-gap: 32px;
+  --hackathon-offset: calc((var(--hackathon-text-width) + var(--hackathon-gap)) / 2);
 
-.autodoc-card:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 8px 32px -4px rgba(79, 70, 229, 0.2),
-    0 0 0 1px rgba(255, 255, 255, 0.9) inset,
-    0 12px 48px -8px rgba(0, 0, 0, 0.12);
-  border-color: rgba(79, 70, 229, 0.4);
-}
-
-.autodoc-card:active {
-  transform: translateY(0px);
-  transition: all 0.1s;
-}
-
-.emoji-wrapper {
   position: relative;
   display: flex;
   align-items: center;
-  justify-content: center;
-  width: 64px;
-  height: 64px;
-  border-radius: 50%;
-  background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
-  box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.5),
-    0 4px 16px -2px rgba(245, 158, 11, 0.3);
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  gap: var(--hackathon-gap);
+  width: 100%;
+  max-width: 100%;
+  margin: 0 auto;
+  transform: translateX(var(--hackathon-offset));
 }
 
-.autodoc-card:hover .emoji-wrapper {
-  animation: float 2s ease-in-out infinite;
-  box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.7),
-    0 6px 24px -2px rgba(245, 158, 11, 0.4);
+.hackathon__row--in-view {
+  animation: hackathonRowSettle 1.3s cubic-bezier(0.34, 1.2, 0.4, 1) both;
+  animation-delay: 0.8s;
 }
 
-.autodoc-card-emoji {
-  font-size: 2rem;
-  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
+@keyframes hackathonRowSettle {
+  from {
+    transform: translateX(var(--hackathon-offset));
+  }
+
+  to {
+    transform: translateX(0);
+  }
 }
 
-.autodoc-card-content {
-  flex: 1;
-  z-index: 1;
-}
-
-.autodoc-card-title {
-  font-size: 1.125rem;
-  font-weight: 700;
-  color: #0f172a;
-  margin: 0 0 6px 0;
-  line-height: 1.4;
-  letter-spacing: -0.01em;
-}
-
-.autodoc-card-desc {
+.hackathon__trophy-slot {
+  width: 110px;
+  height: 110px;
+  flex-shrink: 0;
   display: flex;
+  justify-content: center;
   align-items: center;
-  gap: 8px;
-  font-size: 0.875rem;
-  font-weight: 500;
-  color: #64748b;
-  margin: 0;
-}
-
-.desc-separator {
-  width: 4px;
-  height: 4px;
   border-radius: 50%;
-  background: #cbd5e1;
+  background: rgba(255, 255, 255, 0.6);
+  border: 2px solid rgba(255, 255, 255, 0.8);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.03);
 }
 
-#dark .autodoc-card {
-  background: linear-gradient(
-    135deg,
-    rgba(30, 41, 59, 0.95) 0%,
-    rgba(15, 23, 42, 0.9) 100%
-  );
-  border-color: rgba(139, 92, 246, 0.3);
-  box-shadow: 0 4px 24px -2px rgba(139, 92, 246, 0.15),
-    0 0 0 1px rgba(255, 255, 255, 0.05) inset,
-    0 8px 32px -8px rgba(0, 0, 0, 0.3);
+#dark .hackathon__trophy-slot {
+  background: rgba(15, 23, 42, 0.6);
+  border: 2px solid rgba(71, 85, 105, 0.5);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
 }
 
-#dark .autodoc-card::before {
-  background: linear-gradient(
-    90deg,
-    transparent,
-    rgba(139, 92, 246, 0.12),
-    transparent
-  );
+.hackathon__trophy {
+  font-size: 54px;
+  line-height: 1;
+  display: inline-block;
+  transform: scale(0.3);
+  filter: blur(10px) drop-shadow(0 0 8px rgba(234, 179, 8, 0));
+  opacity: 0;
 }
 
-#dark .autodoc-card:hover {
-  border-color: rgba(139, 92, 246, 0.5);
-  box-shadow: 0 8px 32px -4px rgba(139, 92, 246, 0.25),
-    0 0 0 1px rgba(255, 255, 255, 0.1) inset,
-    0 12px 48px -8px rgba(0, 0, 0, 0.4);
+.hackathon__row--in-view .hackathon__trophy {
+  animation: hackathonTrophyFocus 1s cubic-bezier(0.34, 1.2, 0.4, 1) both;
 }
 
-#dark .autodoc-card-title {
-  color: #f1f5f9;
+@keyframes hackathonTrophyFocus {
+  0% {
+    transform: scale(0.3);
+    filter: blur(10px) drop-shadow(0 0 8px rgba(234, 179, 8, 0));
+    opacity: 0;
+  }
+
+  70% {
+    transform: scale(1.08);
+    filter: blur(0) drop-shadow(0 0 12px rgba(234, 179, 8, 0.5));
+    opacity: 1;
+  }
+
+  100% {
+    transform: scale(1);
+    filter: blur(0) drop-shadow(0 0 10px rgba(234, 179, 8, 0.45));
+    opacity: 1;
+  }
 }
 
-#dark.autodoc-card-desc {
+.hackathon__text {
+  flex: 1;
+  min-width: 0;
+  text-align: left;
+  opacity: 0;
+  transform: translateX(16px);
+}
+
+.hackathon__row--in-view .hackathon__text {
+  animation: hackathonTextReveal 0.9s ease-out both;
+  animation-delay: 1.4s;
+}
+
+@keyframes hackathonTextReveal {
+  from {
+    opacity: 0;
+    transform: translateX(16px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.hackathon__badges {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.hackathon__badge {
+  display: inline-block;
+  padding: 6px 16px;
+  border-radius: 999px;
+  font-size: 13px;
+  font-weight: 500;
+  font-family: "Archivo";
+  background: rgba(248, 250, 252, 0.6);
+  border: 2px solid rgba(248, 250, 252, 0.6);
+  backdrop-filter: blur(21px);
+  color: #1e293b;
+}
+
+.hackathon__badge--winner {
+  border-color: rgba(234, 179, 8, 0.35);
+  color: #a16207;
+  background: rgba(254, 249, 195, 0.7);
+}
+
+#dark .hackathon__badge--winner {
+  border-color: rgba(234, 179, 8, 0.3);
+  color: #facc15;
+  background: rgba(234, 179, 8, 0.1);
+}
+
+.hackathon__badge--muted {
+  background: rgba(226, 232, 240, 0.6);
+  border: 2px solid rgba(203, 213, 225, 0.6);
+}
+
+#dark .hackathon__badge {
+  color: #cbd5e1;
+  background: rgba(30, 41, 59, 0.6);
+  border: 2px solid rgba(51, 65, 85, 0.6);
+}
+
+#dark .hackathon__badge--muted {
+  background: rgba(51, 65, 85, 0.4);
+  border: 2px solid rgba(71, 85, 105, 0.6);
+}
+
+.hackathon__project {
+  font-size: 24px;
+  font-weight: 900;
+  color: #1e293b;
+  margin: 0 0 4px;
+  letter-spacing: -0.02em;
+}
+
+#dark .hackathon__project {
+  background: linear-gradient(to right, #f8fafc, #cbd5e1);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.hackathon__event {
+  font-family: "Archivo";
+  font-size: 18px;
+  color: #1e293b;
+  margin: 0 0 8px;
+}
+
+#dark .hackathon__event {
+  color: #e2e8f0;
+}
+
+.hackathon__description {
+  font-family: "Archivo";
+  font-size: 16px;
+  line-height: 26px;
+  color: #475569;
+  margin: 0;
+  max-width: 100%;
+}
+
+#dark .hackathon__description {
   color: #94a3b8;
 }
 
-#dark .desc-separator {
-  background: #475569;
+@media (min-width: 640px) {
+  .hackathon {
+    margin-top: 150px;
+    padding: 48px 40px;
+  }
 }
 
+@media (min-width: 700px) {
+  .hackathon__row {
+    --hackathon-text-width: 600px;
+    --hackathon-gap: 48px;
+  }
+
+  .hackathon__trophy {
+    font-size: 80px;
+  }
+
+  .hackathon__project {
+    font-size: 28px;
+  }
+}
+
+
 @media (max-width: 640px) {
-  .autodoc-card {
+
+  .hackathon__row {
+    --hackathon-offset: 0px;
     flex-direction: column;
-    padding: 24px;
-    border-radius: 32px;
+    max-width: 100%;
+    gap: 20px;
+    transform: none;
+  }
+
+  .hackathon__text {
     text-align: center;
+    transform: translateY(16px);
   }
 
-  .emoji-wrapper {
-    width: 56px;
-    height: 56px;
+  .hackathon__row--in-view .hackathon__text {
+    animation-name: hackathonTextRevealMobile;
   }
 
-  .autodoc-card-emoji {
-    font-size: 1.75rem;
+  @keyframes hackathonTextRevealMobile {
+    from {
+      opacity: 0;
+      transform: translateY(16px);
+    }
+
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
   }
 
-  .autodoc-card-desc {
+  .hackathon__badges {
     justify-content: center;
+  }
+
+  .hackathon__description {
+    max-width: 100%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hackathon__row {
+    transform: none;
+    animation: none;
+  }
+
+  .hackathon__trophy {
+    animation: none;
+    opacity: 1;
+    filter: none;
+    transform: scale(1);
+  }
+
+  .hackathon__text {
+    animation: none;
+    opacity: 1;
+    transform: none;
   }
 }
