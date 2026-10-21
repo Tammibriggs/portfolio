@@ -15,39 +15,34 @@ function Work({
 }) {
   const { isLight } = useContextValue();
   const [previewOpen, setPreviewOpen] = useState(false);
+  // "dark" icons are drawn for light backgrounds, and the other way round
+  const icons = isLight ? techIcons.dark : techIcons.light;
 
   return (
-    <div className="work">
+    <article className="work">
       <div className="work__mediaWrap">
         {video ? (
           <video
-            className="work__media work__video"
+            className="work__media"
             src={video}
-            // autoPlay
-            // loop
             muted
             playsInline
             controls
+            preload="none"
             poster={image} // shows image while video loads / if it fails
           />
         ) : (
-          <div
-            style={{
-              backgroundImage: `url(${image})`,
-              backgroundSize: "cover",
-              backgroundRepeat: "no-repeat",
-              backgroundPosition: "center",
-            }}
-            className="work__media work__img"
-          ></div>
+          <img className="work__media" src={image} alt="" loading="lazy" />
         )}
-        {projectLink && <button
-          className="work__previewButton"
-          onClick={() => setPreviewOpen(true)}
-          aria-label={`Preview ${name} live`}
-        >
-          <span>Live preview</span>
-        </button>}
+        {projectLink && (
+          <button
+            className="work__previewButton"
+            onClick={() => setPreviewOpen(true)}
+            aria-label={`Preview ${name} live`}
+          >
+            Live preview
+          </button>
+        )}
       </div>
 
       {previewOpen && projectLink && (
@@ -59,55 +54,26 @@ function Work({
 
       <div className="work__details">
         <h3>{name}</h3>
-        <div className="work__description">
-          <p>{description}</p>
+        <p className="work__description">{description}</p>
+        <div className="work__techs" aria-label="Technologies used">
+          {icons.map((icon) => (
+            <TechIcon key={icon} icon={icon} />
+          ))}
         </div>
-        <h4>Technologies used</h4>
-        <div className="work__techs">
-          {isLight && (
-            <>
-              {techIcons.dark.map((icon, i) => (
-                <TechIcon key={i} icon={icon} />
-              ))}
-            </>
+        <div className="work__links">
+          {projectLink && (
+            <a className="link-arrow" href={projectLink} target="_blank" rel="noreferrer">
+              Live site
+            </a>
           )}
-          {!isLight && (
-            <>
-              {techIcons.light.map((icon, i) => (
-                <TechIcon key={i} icon={icon} />
-              ))}
-            </>
-          )}
-        </div>
-        <div className="works__externalLinks">
-          {isLight && (
-            <>
-              {gitHubLink && (
-                <a href={gitHubLink} target="_blank" rel="noreferrer">
-                  <img src="/assets/github.png" alt="GitHub" />
-                </a>
-              )}
-              {projectLink && <a href={projectLink} target="_blank" rel="noreferrer">
-                <img src="/assets/external-link.png" alt="external link" />
-              </a>}
-            </>
-          )}
-          {!isLight && (
-            <>
-              {gitHubLink && <a href={gitHubLink}>
-                <img src="/assets/github-light.png" alt="GitHub" />
-              </a>}
-              {projectLink && <a href={projectLink}>
-                <img
-                  src="/assets/external-link-light.png"
-                  alt="external link"
-                />
-              </a>}
-            </>
+          {gitHubLink && (
+            <a className="link-arrow" href={gitHubLink} target="_blank" rel="noreferrer">
+              Source on GitHub
+            </a>
           )}
         </div>
       </div>
-    </div>
+    </article>
   );
 }
 

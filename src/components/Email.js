@@ -15,8 +15,6 @@ function Email() {
 
   return (
     <div className='email'>
-      <img src='/assets/mail.png' alt='mail' />
-
       <div className='email__address-row'>
         <button
           type='button'
@@ -60,9 +58,9 @@ function Email() {
           <label htmlFor='message'>Your message</label>
           <textarea placeholder="Message" name="message" id='message'></textarea>
         </div>
-        <button type="submit">
+        <button type="submit" className='btn btn--primary'>
           Send message
-          <img src='/assets/vector.png' alt='arrow' />
+          <span aria-hidden='true'>→</span>
         </button>
       </form>
     </div>

@@ -1,73 +1,62 @@
 import "../styles/about.css";
-import { useContextValue } from "../context";
+
+// Tools I've used on the docs projects above
+const docsToolkit = [
+  "OpenAPI",
+  "Scalar",
+  "Redocly CLI",
+  "Markdown",
+  "Agent Skills",
+  "Git and GitHub",
+];
+
+const languagesAndFrameworks = [
+  "TypeScript",
+  "Python",
+  "Next.js",
+  "Express.js",
+  "FastAPI",
+  "LangGraph",
+];
 
 function About() {
-  const { isLight } = useContextValue();
-
-  const technologies = [
-    {
-      name: "TypeScript",
-      icon: "/assets/typescript.png",
-    },
-    {
-      name: "Python",
-      icon: "/assets/python.png",
-    },
-    {
-      name: "Next.js",
-      icon: "/assets/next.png",
-    },
-    {
-      name: "Express.js",
-      icon: "/assets/express.png",
-    },
-    {
-      name: "FastAPI",
-      icon: {
-        light: "/assets/fastapi-black.svg",
-        dark: "/assets/fastapi-white.svg",
-      },
-    },
-    {
-      name: "Langgraph",
-      icon: "/assets/langgraph.png",
-    },
-  ]
-
   return (
     <div className="about">
-      <div className="about__img_container">
-        <div className="about__img_background">
-          <img className="about__img" src="/assets/profile-pic.webp" alt="profile" />
-        </div>
-      </div>
       <div className="about__desc">
         <p>
-          Back in the day, I had this trusty junk bag where I kept my most precious treasures: carton, rotors, wires, and other random parts I used to build interesting things. I made projects like a remote controlled car and even a helicopter that, unfortunately, never got off the ground 😂. It was fun!
-          <br /> <br />
-          Today, I express that same curiosity by building websites that I find interesting, useful, and cool. Over the past 5+ years, I've grown as both a developer and a technical writer, continually learning, sharpening my skills, and exploring ideas through technical writing.
-
+          Back in the day, I had this trusty junk bag where I kept my most
+          precious treasures: carton, rotors, wires, and other random parts I
+          used to build interesting things. I made projects like a remote
+          controlled car and even a helicopter that, unfortunately, never got
+          off the ground. It was fun!
         </p>
-        <h3>The Big Six</h3>
-        {/* <p>Here are some of the technologies I am familiar with</p> */}
-        <div className="about__techs">
-          {technologies.map(({ icon, name }, i) => {
-            const src =
-              typeof icon === "string"
-                ? icon
-                : isLight
-                  ? icon.light
-                  : icon.dark;
-
-            return (
-              <div key={i}>
-                <img src={src} alt={name} />
-                <span>{name}</span>
-              </div>
-            );
-          })}
-        </div>
+        <p>
+          Today, I put that same curiosity into understanding how software works
+          and explaining it clearly. Over the past 5+ years, I've worked as both
+          a developer and a technical writer. Now I focus on developer docs: API
+          references, quickstarts and tutorials.
+        </p>
       </div>
+
+      <aside className="about__glance" aria-label="Tools and languages">
+        <h3>Docs toolkit</h3>
+        <div className="about__chips">
+          {docsToolkit.map((name) => (
+            <span key={name} className="chip">
+              {name}
+            </span>
+          ))}
+        </div>
+
+        <h3>Languages and frameworks</h3>
+        <div className="about__chips">
+          {languagesAndFrameworks.map((name) => (
+            <span key={name} className="chip">
+              {name}
+            </span>
+          ))}
+        </div>
+      </aside>
     </div>
   );
 }

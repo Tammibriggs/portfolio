@@ -1,4 +1,5 @@
 import "../styles/article.css";
+import { formatMonth, getPublication } from "../utils/articles";
 
 function Article({
   direction,
@@ -10,63 +11,38 @@ function Article({
   description,
   reduceTop,
 }) {
+  const publication = getPublication(link);
+
   return (
-    <div
-      className={`article ${direction === "row" && "row"}`}
-      style={{ top: `${reduceTop ? "45px" : "0"}` }}
+    <article
+      className={`article ${direction === "row" ? "row" : ""} ${
+        reduceTop ? "article--offset" : ""
+      }`}
     >
-      {direction !== "row" ? (
-        <>
-          <div
-            style={{
-              backgroundImage: `url(${image})`,
-              backgroundSize: "cover",
-              backgroundRepeat: "no-repeat",
-              backgroundPosition: "center",
-              // backgroundColor: "#16e5ff5e",
-              // backgroundBlendMode: "luminosity",
-            }}
-            className="article__img"
-          />
-          <span>{publishedDate}</span>
-          <div className="article__tags">
-            {tags.map((tag) => (
-              <span key={tag}>#{tag}</span>
-            ))}
-          </div>
-          <h2>
-            <a href={link}>{title}</a>
-          </h2>
-          <p>{description}</p>
-        </>
-      ) : (
-        <>
-          <div
-            style={{
-              backgroundImage: `url(${image})`,
-              backgroundSize: "cover",
-              backgroundRepeat: "no-repeat",
-              backgroundPosition: "center",
-              backgroundColor: "#16e5ff5e",
-              backgroundBlendMode: "luminosity",
-            }}
-            className="article__img"
-          />
-          <div className="article__desc">
-            <h2>
-              <a href={link}>{title}</a>
-            </h2>
-            <span>{publishedDate}</span>
-            <div className="article__tags">
-              {tags.map((tag) => (
-                <span key={tag}>#{tag}</span>
-              ))}
-            </div>
-            <p>{description}</p>
-          </div>
-        </>
-      )}
-    </div>
+      <div
+        style={{ backgroundImage: `url(${image})` }}
+        className="article__img"
+      />
+      <div className="article__desc">
+        <span className="article__meta">
+          {publication && <strong>{publication}</strong>}
+          <time dateTime={publishedDate}>{formatMonth(publishedDate)}</time>
+        </span>
+        <h2>
+          <a href={link} target="_blank" rel="noreferrer">
+            {title}
+          </a>
+        </h2>
+        <p>{description}</p>
+        <div className="article__tags">
+          {tags.filter(Boolean).map((tag) => (
+            <span key={tag} className="chip">
+              #{tag}
+            </span>
+          ))}
+        </div>
+      </div>
+    </article>
   );
 }
 

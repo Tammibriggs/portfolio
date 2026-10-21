@@ -1,69 +1,48 @@
 .email {
   position: relative;
-  margin-top: 64px;
+  max-width: 800px;
+  margin-top: 40px;
 }
 
 .email__address-row {
   margin-bottom: 20px;
 }
 
-.email__address {
-  font-family: "Archivo", monospace;
-  font-size: 15px;
-  color: #475569;
-  letter-spacing: 0.01em;
-}
-
-#dark .email__address {
-  color: #94a3b8;
-}
-
 .email__copy-btn {
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  padding: 8px 14px;
-  border-radius: 999px;
-  border: none;
-  background: #4F46E5;
-  color: #fff;
-  font-size: 13px;
+  padding: 7px 14px;
+  border: 1px solid var(--border-strong);
+  border-radius: 8px;
+  background: var(--surface);
+  color: var(--text);
+  font-family: var(--font-sans);
+  font-size: 14px;
   font-weight: 500;
-  font-family: "Archivo";
   cursor: pointer;
-  transition: background 0.2s ease, transform 0.15s ease;
   white-space: nowrap;
+  transition: border-color 0.15s ease, color 0.15s ease;
 }
 
 .email__copy-btn:hover {
-  background: #4338ca;
-  transform: scale(1.03);
+  border-color: var(--text-3);
 }
 
 .email__copy-btn--copied {
-  background: #16a34a;
+  border-color: var(--success);
+  color: var(--success);
 }
-
-.email__copy-btn--copied:hover {
-  background: #15803d;
-}
-
 
 .email form {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  padding: 32px;
   gap: 24px;
-  background: rgba(248, 250, 252, 0.6);
-  border: 2px solid rgba(248, 250, 252, 0.6);
-  backdrop-filter: blur(21px);
-  border-radius: 24px;
-}
-
-#dark .email form {
-  background: rgba(30, 41, 59, 0.6);
-  border: 2px solid rgba(51, 65, 85, 0.6);
+  padding: 24px;
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  background: var(--surface);
 }
 
 .form__inputGrp {
@@ -72,113 +51,59 @@
   gap: 24px;
 }
 
-.email form>div {
-  width: 100%;
-}
-
-.form__inputGrp>div {
+.email form > div,
+.form__inputGrp > div {
   width: 100%;
 }
 
 .email form input,
-textarea {
-  background: #E2E8F0;
-  border-radius: 16px;
+.email form textarea {
   width: 100%;
-  border: none;
+  border: 1px solid var(--border-strong);
+  border-radius: 8px;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-sans);
+  font-size: 15px;
+  transition: border-color 0.15s ease;
 }
 
-#dark .email form input,
-#dark textarea {
-  color: #E2E8F0;
-  background-color: #334155;
+.email form input::placeholder,
+.email form textarea::placeholder {
+  color: var(--text-3);
 }
 
-#dark .email form input::-webkit-input-placeholder,
-#dark textarea::-webkit-input-placeholder {
-  color: #b6bec9;
-}
-
-#dark .email form input::-moz-placeholder,
-#dark textarea::-webkit-input-placeholder {
-  /* Firefox 19+ */
-  color: #b6bec9;
-}
-
-#dark .email form input:-ms-input-placeholder,
-#dark textarea::-webkit-input-placeholder {
-  /* IE 10+ */
-  color: #b6bec9;
-}
-
-#dark .email form input:-moz-placeholder,
-#dark textarea::-webkit-input-placeholder {
-  /* Firefox 18- */
-  color: #b6bec9;
+.email form input:focus,
+.email form textarea:focus {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px var(--accent-soft);
 }
 
 .email form input {
-  height: 50px;
-  padding: 0 10px;
+  height: 46px;
+  padding: 0 12px;
 }
 
 .email form textarea {
   height: 160px;
-  padding: 10px;
+  padding: 12px;
+  resize: vertical;
 }
-
 
 .email form label {
   display: block;
-  font-size: 16px;
-  line-height: 24px;
-  color: #000000;
-  margin-bottom: 5px;
-}
-
-#dark .email form label {
-  color: #CBD5E1;
-}
-
-.email form button {
-  padding: 16px;
-  width: 174px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  height: 56px;
-  background: #4F46E5;
-  border: 2px solid rgba(248, 250, 252, 0.6);
-  backdrop-filter: blur(21px);
-  border-radius: 12px;
-  color: white;
-  border: none;
-}
-
-.email form button:hover {
-  transform: scale(1.01);
-}
-
-.email form button:active {
-  transform: scale(1);
-}
-
-.email>img {
-  position: absolute;
-  z-index: 1;
-  top: -40px;
-  right: -90px;
-  filter: drop-shadow(25px 35px 35px rgba(67, 56, 202, 0.15));
-  display: none;
-}
-
-@media (min-width: 450px) {
-  .email>img {
-    display: block;
-  }
+  margin-bottom: 6px;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text-2);
 }
 
 @media (min-width: 600px) {
+  .email form {
+    padding: 32px;
+  }
+
   .form__inputGrp {
     flex-direction: row;
   }

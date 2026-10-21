@@ -1,57 +1,62 @@
 import "../styles/experience.css";
 import experienceData from "../data/experience";
 import { useInViewOnce } from "../hooks/useInViewOnce";
+import SectionHeader from "./SectionHeader";
 
-function TimelineItem({ item }) {
+// One role, laid out like a changelog entry: the date on the left, notes on the right.
+function ChangelogEntry({ item }) {
   const [ref, inView] = useInViewOnce({ threshold: 0.1 });
 
   return (
-    <div
+    <li
       ref={ref}
-      className={`timeline__item ${inView ? "timeline__item--in-view" : ""}`}
+      className={`changelog__entry ${inView ? "changelog__entry--in-view" : ""}`}
     >
-      <div className="timeline__marker">
-        <div className="timeline__node" aria-hidden="true">
+      <span className="changelog__period">{item.period}</span>
+      <div className="changelog__body">
+        <div className="changelog__head">
           {item.logo && (
-            <img src={item.logo} alt={item.company} className="timeline__logo" />
+            <span className="changelog__logo">
+              <img src={item.logo} alt="" />
+            </span>
           )}
+          <div>
+            <h3>{item.role}</h3>
+            <span className="changelog__company">{item.company}</span>
+          </div>
         </div>
-      </div>
-      <div className="timeline__card">
-        <div className="timeline__header">
-          <span className="timeline__period">{item.period}</span>
-          <h3 className="timeline__role">{item.role}</h3>
-          <h4 className="timeline__company">{item.company}</h4>
-        </div>
-        <ul className="timeline__description">
+        <ul className="changelog__notes">
           {item.description.map((bullet, idx) => (
             <li key={idx}>{bullet}</li>
           ))}
         </ul>
-        <div className="timeline__tags">
-          {item.tags.map((tag, idx) => (
-            <span key={idx} className="timeline__tag">
+        <div className="changelog__tags">
+          {item.tags.map((tag) => (
+            <span key={tag} className="chip">
               {tag}
             </span>
           ))}
         </div>
       </div>
-    </div>
+    </li>
   );
 }
 
 function Experience() {
   return (
-    <div className="experience wrapper">
-      <h2 className="section-heading">Work Experience</h2>
-      <p>A history of my professional roles and technical contributions</p>
-
-      <div className="timeline">
-        {experienceData.map((item, i) => (
-          <TimelineItem key={i} item={item} />
+    <section className="section wrapper" id="experience">
+      <SectionHeader
+        index="03"
+        label="Experience"
+        title="Work experience"
+        intro="Where I’ve written docs, articles and code."
+      />
+      <ol className="changelog">
+        {experienceData.map((item) => (
+          <ChangelogEntry key={`${item.company}-${item.role}`} item={item} />
         ))}
-      </div>
-    </div>
+      </ol>
+    </section>
   );
 }
 

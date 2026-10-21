@@ -1,0 +1,440 @@
+/* minmax(0, 1fr), not auto: an auto column grows to fit its widest
+   unbreakable content (the one-line URL bar) and pushes cards off narrow screens */
+.docs__list {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 32px;
+  margin-top: 48px;
+}
+
+.docs__more {
+  margin-top: 28px;
+}
+
+/* ─── Docs page ────────────────────────────────────────────── */
+.docsPage__intro {
+  margin-top: 20px;
+  max-width: 62ch;
+  font-size: 18px;
+  color: var(--text-2);
+}
+
+.docsPage__toc {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 8px 20px;
+  margin-top: 40px;
+  padding: 14px 0;
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+
+.docsPage__tocLabel {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--text-3);
+}
+
+.docsPage__toc ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 20px;
+  list-style: none;
+}
+
+.docsPage__toc a {
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--accent);
+}
+
+.docsPage__toc a:hover {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+/* ─── Case study ───────────────────────────────────────────── */
+.caseStudy {
+  scroll-margin-top: 24px;
+  padding: 24px 16px;
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  background: var(--surface);
+}
+
+.caseStudy__top {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 28px;
+}
+
+.caseStudy__kind {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--text-3);
+}
+
+.caseStudy h3 {
+  margin-top: 8px;
+  font-family: var(--font-serif);
+  font-size: 28px;
+  font-weight: 600;
+  line-height: 1.15;
+  letter-spacing: -0.01em;
+  color: var(--text);
+}
+
+.caseStudy__summary {
+  margin-top: 12px;
+  font-size: 17px;
+  color: var(--text-2);
+}
+
+.browserFrame {
+  overflow: hidden;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: var(--surface-2);
+  transition: border-color 0.15s ease, transform 0.2s ease;
+}
+
+.caseStudy__shot {
+  display: block;
+}
+
+.caseStudy__shot:hover .browserFrame {
+  border-color: var(--border-strong);
+  transform: translateY(-2px);
+}
+
+.browserFrame__bar {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 8px 12px;
+  border-bottom: 1px solid var(--border);
+}
+
+.browserFrame__dots {
+  display: flex;
+  gap: 5px;
+}
+
+.browserFrame__dots i {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--border-strong);
+}
+
+.browserFrame__url {
+  flex: 1;
+  min-width: 0;
+  overflow: hidden;
+  padding: 2px 10px;
+  border-radius: 6px;
+  background: var(--surface);
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--text-3);
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.browserFrame img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  object-position: top left;
+}
+
+/* Before/after switch above a case study's screenshot */
+.shotToggle {
+  display: inline-flex;
+  gap: 2px;
+  margin-bottom: 10px;
+  padding: 3px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--surface-2);
+}
+
+.shotToggle button {
+  padding: 4px 12px;
+  border: 0;
+  border-radius: 6px;
+  background: transparent;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  line-height: 1.5;
+  color: var(--text-3);
+  cursor: pointer;
+}
+
+.shotToggle button:hover {
+  color: var(--text);
+}
+
+.shotToggle button[aria-pressed="true"] {
+  background: var(--accent-soft);
+  color: var(--accent);
+}
+
+/* Two lines tall either way, so switching tabs doesn't make the card jump */
+.caseStudy__caption {
+  min-height: 3.2em;
+  margin-top: 10px;
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--text-3);
+}
+
+.caseStudy__facts {
+  display: grid;
+  gap: 20px;
+  margin-top: 32px;
+  padding-top: 28px;
+  border-top: 1px solid var(--border);
+}
+
+.caseStudy__facts dt {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--accent);
+}
+
+.caseStudy__facts dd {
+  margin-top: 6px;
+  font-size: 15px;
+  line-height: 1.65;
+  color: var(--text-2);
+}
+
+.caseStudy__deliverables {
+  margin-top: 32px;
+}
+
+.caseStudy__deliverables h4 {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--text-3);
+}
+
+.caseStudy__deliverables ul {
+  display: grid;
+  gap: 10px;
+  margin-top: 12px;
+  list-style: none;
+}
+
+.caseStudy__deliverables a {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  height: 100%;
+  padding: 14px 16px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: var(--bg);
+  transition: border-color 0.15s ease, background-color 0.15s ease;
+}
+
+.caseStudy__deliverables a:hover {
+  border-color: var(--accent);
+  background: var(--accent-soft);
+}
+
+.deliverable__type {
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--text);
+}
+
+.deliverable__arrow {
+  color: var(--text-3);
+  transition: color 0.15s ease;
+}
+
+.caseStudy__deliverables a:hover .deliverable__arrow {
+  color: var(--accent);
+}
+
+.deliverable__desc {
+  font-size: 13.5px;
+  line-height: 1.5;
+  color: var(--text-3);
+}
+
+.caseStudy__footer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  margin-top: 28px;
+}
+
+.caseStudy__tools {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+/* ─── Docs tooling ─────────────────────────────────────────── */
+.tooling {
+  margin-top: 56px;
+}
+
+.tooling__heading {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--text-3);
+}
+
+.tooling__list {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 16px;
+  margin-top: 16px;
+}
+
+.toolCard {
+  display: grid;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--surface);
+}
+
+.toolCard--highlight {
+  border-color: color-mix(in srgb, var(--warn) 35%, var(--border));
+}
+
+.toolCard__media {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  aspect-ratio: 16 / 9;
+  background: var(--surface-2);
+}
+
+.toolCard--highlight .toolCard__media {
+  background: var(--warn-soft);
+}
+
+.toolCard__media video,
+.toolCard__media img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.toolCard__trophy {
+  font-size: 56px;
+  line-height: 1;
+}
+
+.toolCard__body {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+}
+
+.toolCard__badge {
+  align-self: flex-start;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--text-3);
+}
+
+.toolCard--highlight .toolCard__badge {
+  color: var(--warn);
+}
+
+.toolCard h4 {
+  margin-top: 6px;
+  font-size: 19px;
+  font-weight: 600;
+  color: var(--text);
+}
+
+.toolCard p {
+  margin-top: 6px;
+  font-size: 15px;
+  color: var(--text-2);
+}
+
+.toolCard__links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-top: auto;
+  padding-top: 14px;
+  font-size: 15px;
+}
+
+@media (min-width: 640px) {
+  .caseStudy {
+    padding: 32px;
+  }
+
+  .caseStudy h3 {
+    font-size: 32px;
+  }
+
+  .caseStudy__deliverables ul {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .toolCard {
+    grid-template-columns: 240px minmax(0, 1fr);
+  }
+
+  .toolCard__media {
+    aspect-ratio: auto;
+    min-height: 160px;
+  }
+}
+
+@media (min-width: 900px) {
+  .caseStudy {
+    padding: 40px;
+  }
+
+  .caseStudy__top {
+    grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+    align-items: center;
+    gap: 40px;
+  }
+
+  .caseStudy__facts {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 32px;
+  }
+
+  .caseStudy__deliverables ul {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
+  .tooling__list {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .toolCard {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .toolCard__media {
+    aspect-ratio: 16 / 9;
+    min-height: 0;
+  }
+}

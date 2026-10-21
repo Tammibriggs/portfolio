@@ -4,14 +4,14 @@ import Hero from "../components/Hero";
 
 function Contact() {
   useEffect(() => {
-    document.title = "Contact";
+    document.title = "Contact | Taminoturoko Briggs";
   }, []);
 
   return (
     <div>
       <Hero text1="Contact" text2="Feel free to reach out to me!" />
 
-      <div className="wrapper" style={{ maxWidth: "800px" }}>
+      <div className="wrapper">
         <h2 className="section-heading">Get in touch</h2>
         <p>
           Feel free to contact me if you want to work on a project, have a

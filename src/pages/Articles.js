@@ -91,7 +91,7 @@ function Articles() {
   };
 
   useEffect(() => {
-    document.title = "Articles";
+    document.title = "Articles | Taminoturoko Briggs";
   }, []);
 
   // filter by language and frameworks

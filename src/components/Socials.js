@@ -1,36 +1,22 @@
 import '../styles/socials.css'
 import { useContextValue } from '../context'
 
+const socials = [
+  { name: 'GitHub', href: 'https://github.com/Tammibriggs', icon: 'github' },
+  { name: 'LinkedIn', href: 'https://www.linkedin.com/in/taminoturoko-briggs-b98251203/', icon: 'linkedin' },
+]
+
 function Socials() {
 
   const { isLight } = useContextValue()
 
   return (
     <div className="socials">
-      {isLight
-        ? <>
-          <a href='https://github.com/Tammibriggs' target="_blank" rel="noopener noreferrer">
-            <img src="/assets/github.png" alt="github" />
-          </a>
-          <a href='https://www.linkedin.com/in/taminoturoko-briggs-b98251203/' target="_blank" rel="noopener noreferrer">
-            <img src="/assets/linkedin.png" alt="github" />
-          </a>
-          <a href='https://x.com/dev_briggs' target="_blank" rel="noopener noreferrer">
-            <img src="/assets/twitter.png" alt="github" />
-          </a>
-        </>
-        : <>
-          <a href='https://github.com/Tammibriggs' target="_blank" rel="noopener noreferrer">
-            <img src="/assets/github-light.png" alt="github" />
-          </a>
-          <a href='https://www.linkedin.com/in/taminoturoko-briggs-b98251203/' target="_blank" rel="noopener noreferrer">
-            <img src="/assets/linkedin-light.png" alt="github" />
-          </a>
-          <a href='https://x.com/dev_briggs' target="_blank" rel="noopener noreferrer">
-            <img src="/assets/twitter-light.png" alt="github" />
-          </a>
-        </>
-      }
+      {socials.map(({ name, href, icon }) => (
+        <a key={name} href={href} target="_blank" rel="noopener noreferrer">
+          <img src={`/assets/${icon}${isLight ? '' : '-light'}.png`} alt={name} />
+        </a>
+      ))}
     </div>
   )
 }

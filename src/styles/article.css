@@ -1,107 +1,93 @@
 .article {
+  position: relative;
   display: flex;
-  align-items: flex-start;
   flex-direction: column;
-  padding: 12px 12px 32px;
-  gap: 16px;
-  background: rgba(248, 250, 252, 0.6);
-  border: 2px solid rgba(248, 250, 252, 0.6);
-  border-radius: 24px;
-  color: #334155;
+  overflow: hidden;
+  max-width: 500px;
   margin-left: auto;
   margin-right: auto;
-  flex-basis: 30%;
-  max-width: 500px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--surface);
+  transition: border-color 0.15s ease;
 }
 
-#dark .article {
-  background: rgba(30, 41, 59, 0.6);
-  border: 2px solid rgba(51, 65, 85, 0.6);
+.article:hover {
+  border-color: var(--border-strong);
 }
 
-.article .article__img {
+/* No min-height here: with the aspect ratio it would force a 355px minimum width */
+.article__img {
   width: 100%;
-  box-shadow: 0px 15px 35px rgba(67, 56, 202, 0.25);
-  border-radius: 16px;
-  min-height: 250px;
-  background: rgb(109, 87, 109);
+  aspect-ratio: 16 / 9;
+  border-bottom: 1px solid var(--border);
+  background-color: var(--surface-2);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
-.article > span, .article__desc > span {
-  font-family: 'Archivo';
-  font-size: 12px;
-}
-
-#dark .article > span, #dark .article__desc > span {
-  color: #CBD5E1;
-}
-
-
-.article__tags {
-  margin-top: 5px;
+.article__desc {
   display: flex;
-  gap: 8px;
-  flex-wrap: wrap;
+  flex-direction: column;
+  gap: 10px;
+  padding: 18px 20px 22px;
 }
 
-.article__tags span {
-  padding: 6px 6px;
-  border-radius: 8px;
-  background-color: gainsboro;
+.article__meta {
+  display: flex;
+  gap: 10px;
+  font-family: var(--font-mono);
   font-size: 12px;
-  font-weight: 600;
-  color: #856a43;
-  height: fit-content;
+  color: var(--text-3);
+}
+
+.article__meta strong {
+  font-weight: 500;
+  color: var(--text-2);
 }
 
 .article h2 {
-  font-size: 28px;
-  font-weight: 900;
-  line-height: 26px;
-} 
-
-.article h2 a {
-  color: #334155;
+  font-size: 19px;
+  font-weight: 600;
+  line-height: 1.35;
 }
 
-#dark .article h2 a {
-  color: #CBD5E1;
+.article h2 a {
+  color: var(--text);
+  transition: color 0.15s ease;
+}
+
+.article h2 a:hover {
+  color: var(--accent);
 }
 
 .article p {
-  font-size: 18px;
-  line-height: 24px;
-  font-family: 'Archivo';
+  font-size: 15px;
+  color: var(--text-2);
 }
 
-#dark .article p {
-  color: #CBD5E1;
+.article__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 4px;
 }
 
 .row {
   flex-direction: row;
-  padding: 12px;
-  align-items: stretch;
 }
 
 .row .article__img {
-  max-width: 200px;
-  min-width: 100px;
+  flex: 0 0 38%;
+  min-height: 0;
+  aspect-ratio: auto;
+  border-bottom: none;
+  border-right: 1px solid var(--border);
 }
 
-.row .article__desc {
-  display: grid;
-  gap: 5px;
-  width: 65%;
-}
-
-@media (min-width: 850px){
+@media (min-width: 850px) {
   .article {
     max-width: unset;
-  }
-
-  .row .article__img {
-    max-width: unset;
-    width: 40%;
   }
 }
