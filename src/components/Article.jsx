@@ -1,8 +1,9 @@
 import "../styles/article.css";
 import { formatMonth, getPublication } from "../utils/articles";
 
+// variant="feature": the wide card at the top of the Articles page
 function Article({
-  direction,
+  variant,
   link,
   image,
   publishedDate,
@@ -15,14 +16,12 @@ function Article({
 
   return (
     <article
-      className={`article ${direction === "row" ? "row" : ""} ${
+      className={`article ${variant === "feature" ? "article--feature" : ""} ${
         reduceTop ? "article--offset" : ""
       }`}
     >
-      <div
-        style={{ backgroundImage: `url(${image})` }}
-        className="article__img"
-      />
+      {/* The cover is drawn by CSS (article.css) from --cover */}
+      <div style={{ "--cover": `url("${image}")` }} className="article__img" />
       <div className="article__desc">
         <span className="article__meta">
           {publication && <strong>{publication}</strong>}

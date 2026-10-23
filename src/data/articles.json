@@ -1,0 +1,428 @@
+[
+  {
+    "title": "DocScout: find open-source API docs you can contribute to, picked by Gemma",
+    "link": "https://dev.to/tammibriggs/docscout-find-open-source-api-docs-you-can-contribute-to-picked-by-gemma-4ne5",
+    "publishedDate": "2026-10-18",
+    "summary": "DocScout finds open-source projects whose API docs have gaps you can fix. Every day, it checks new repos and lists the projects that pass.",
+    "image": "/assets/articles/docscout-dev-post.webp",
+    "tags": [
+      "api docs",
+      "open source",
+      "gemma"
+    ],
+    "language": [
+      "python"
+    ]
+  },
+  {
+    "title": "Automate Doc Maintenance: Detect and Update Outdated Docs Using Algolia MCP Server, n8n, and LLM",
+    "link": "https://dev.to/tammibriggs/automate-doc-maintenance-detect-and-update-outdated-docs-using-algolia-mcp-server-n8n-and-llm-5bf7",
+    "publishedDate": "2025-07-24",
+    "summary": "AutoDoc is an AI agent that analyzes recent code commits, detects affected documentation pages, and suggests updates, so your documentation stays accurate with every push.",
+    "image": "/assets/articles/autodoc-automate-doc-maintenance.webp",
+    "tags": [
+      "documentation",
+      "algolia",
+      "n8n"
+    ],
+    "language": []
+  },
+  {
+    "title": "Guide to styling CSS scrollbars",
+    "link": "https://blog.logrocket.com/guide-styling-css-scrollbars/",
+    "publishedDate": "2024-05-16",
+    "summary": "By styling the default scrollbar, you can create a more visually appealing site that better aligns with your brand or design.",
+    "image": "/assets/articles/guide-styling-css-scrollbars.webp",
+    "tags": [
+      "css",
+      "scrollbars"
+    ],
+    "language": [
+      "css"
+    ]
+  },
+  {
+    "title": "Gridsome Tutorial: Building a Modern Knowledge Base with ButterCMS",
+    "link": "https://buttercms.com/blog/gridsome-tutorial-knowledge-base",
+    "publishedDate": "2023-10-06",
+    "summary": "Learn how to build a modern knowledge base with ButterCMS using this comprehensive Gridsome tutorial.",
+    "image": "/assets/articles/gridsome-tutorial-knowledge-base.webp",
+    "tags": [
+      "gridsome",
+      "buttercms",
+      "knowledge base"
+    ],
+    "language": [
+      "javascript"
+    ]
+  },
+  {
+    "title": "How to Add a Blog to an Express App Using the ButterCMS Blog Engine",
+    "link": "https://buttercms.com/blog/express-blog-tutorial",
+    "publishedDate": "2023-10-04",
+    "summary": "In this Express blog tutorial, you'll learn how you can use the ButterCMS Blog Engine to quickly add a functional blog to your Express app.",
+    "image": "/assets/articles/express-blog-tutorial.webp",
+    "tags": [
+      "express",
+      "buttercms",
+      "blog engine"
+    ],
+    "language": [
+      "javascript"
+    ]
+  },
+  {
+    "title": "How to Build a Product Landing Page Powered by Gridsome and ButterCMS",
+    "link": "https://buttercms.com/blog/build-a-product-landing-page-with-gridsome",
+    "publishedDate": "2023-08-17",
+    "summary": "Craft dynamic product landing pages effortlessly using Gridsome & ButterCMS. Elevate your e-commerce web presence today!",
+    "image": "/assets/articles/build-a-product-landing-page-with-gridsome.webp",
+    "tags": [
+      "gridsome",
+      "buttercms",
+      "landing page"
+    ],
+    "language": [
+      "javascript"
+    ]
+  },
+  {
+    "title": "Integrating GraphQL subscriptions in an Angular app",
+    "link": "https://blog.logrocket.com/integrating-graphql-subscriptions-angular/",
+    "publishedDate": "2023-08-02",
+    "summary": "Learn how to integrate GraphQL subscriptions in an Angular app to get real-time updates from a WebSocket server when events occur.",
+    "image": "/assets/articles/integrating-graphql-subscriptions-angular.webp",
+    "tags": [
+      "angular",
+      "graphql",
+      "subscriptions"
+    ],
+    "language": [
+      "javascript"
+    ]
+  },
+  {
+    "title": "How to build a tree grid component in React",
+    "link": "https://blog.logrocket.com/build-tree-grid-component-react/",
+    "publishedDate": "2023-05-01",
+    "summary": "Compare a few popular React tree grid libraries, highlighting key features to look for and walking through an example.",
+    "image": "/assets/articles/build-tree-grid-component-react.webp",
+    "tags": [
+      "react",
+      "tree grid"
+    ],
+    "language": [
+      "javascript"
+    ]
+  },
+  {
+    "title": "Build and Launch Your First Astro Blog with Ease Using ButterCMS",
+    "link": "https://buttercms.com/blog/build-astro-blog-using-buttercms",
+    "publishedDate": "2023-04-13",
+    "summary": "Learn how to build an outstanding Astro blog with ButterCMS! A complete guide to creating your first Astro blog.",
+    "image": "/assets/articles/build-astro-blog-using-buttercms.webp",
+    "tags": [
+      "astro",
+      "buttercms",
+      "blog"
+    ],
+    "language": [
+      "javascript"
+    ]
+  },
+  {
+    "title": "How to Add a Blog to Your Angular App with ButterCMS",
+    "link": "https://buttercms.com/blog/angular-blog-tutorial/",
+    "publishedDate": "2022-12-20",
+    "summary": "In this tutorial, you'll learn how you can add a blog to your Angular application in minutes with the ButterCMS Blog Engine.",
+    "image": "/assets/articles/angular-blog-tutorial.webp",
+    "tags": [
+      "angular",
+      "buttercms"
+    ],
+    "language": [
+      "javascript"
+    ]
+  },
+  {
+    "title": "How To Create A Typewriter Effect In Vue",
+    "link": "https://coderpad.io/blog/development/how-to-create-a-typewriter-effect-in-vue/",
+    "publishedDate": "2022-11-30",
+    "summary": "Learn how to grab your user’s attention by implementing the typewriter effect in your Vue applications",
+    "image": "/assets/articles/how-to-create-a-typewriter-effect-in-vue.webp",
+    "tags": [
+      "vue",
+      "typewriter effect"
+    ],
+    "language": [
+      "javascript"
+    ],
+    "featured": true
+  },
+  {
+    "title": "How to Build a Blog with Vue.js and ButterCMS",
+    "link": "https://buttercms.com/blog/create-vuejs-blog/",
+    "publishedDate": "2022-11-17",
+    "summary": "Building a blog by writing server-side code from scratch takes a lot of time and effort to complete it. But this isn't the case when using a headless CMS like ButterCMS which includes ...",
+    "image": "/assets/articles/create-vuejs-blog.webp",
+    "tags": [
+      "vue",
+      "buttercms",
+      "blog engine"
+    ],
+    "language": [
+      "javascript"
+    ]
+  },
+  {
+    "title": "Refactor a React app with the new Firebase v9.x Web SDK",
+    "link": "https://blog.logrocket.com/refactor-react-app-firebase-v9-web-sdk/",
+    "publishedDate": "2022-11-15",
+    "summary": "The Firebase Web SDK v9.x has introduced breaking changes in methods for managing users and querying databases; refactor your React app to avoid throwing...",
+    "image": "/assets/articles/refactor-react-app-firebase-v9-web-sdk.webp",
+    "tags": [
+      "react",
+      "firebase v9"
+    ],
+    "language": [
+      "javascript"
+    ]
+  },
+  {
+    "title": "How to Build a URL Shortener in React with Shrtcode",
+    "link": "https://coderpad.io/blog/development/how-to-build-a-url-shortener-in-react-with-shrtcode/",
+    "publishedDate": "2022-11-08",
+    "summary": "URLs tends to get lengthy, especially when parameters and query strings are attached. This can get annoying when you want to share a link. Learn how to reduce the length of your links.",
+    "image": "/assets/articles/how-to-build-a-url-shortener-in-react-with-shrtcode.webp",
+    "tags": [
+      "react",
+      "url shortener"
+    ],
+    "language": [
+      "javascript"
+    ]
+  },
+  {
+    "title": "Building a React live streaming app with 100ms",
+    "link": "https://blog.logrocket.com/build-react-live-streaming-app-100ms/",
+    "publishedDate": "2022-10-14",
+    "summary": "100ms includes support for HLS for live streaming, which allows for scaling to millions of viewers, mainly due to its support by OSes and...",
+    "image": "/assets/articles/build-react-live-streaming-app-100ms.webp",
+    "tags": [
+      "react",
+      "100ms",
+      "live streaming"
+    ],
+    "language": [
+      "javascript"
+    ]
+  },
+  {
+    "title": "Build a Job Board with React and GraphQL using Webiny Headless CMS",
+    "link": "https://www.webiny.com/blog/build-job-board-react-graphql",
+    "publishedDate": "2022-10-05",
+    "summary": "In this tutorial, we will learn about the Webiny CMS and how we can use it in React by building a job board application.",
+    "image": "/assets/articles/build-job-board-react-graphql.webp",
+    "tags": [
+      "react",
+      "webiny",
+      "job board"
+    ],
+    "language": [
+      "javascript"
+    ]
+  },
+  {
+    "title": "How to Create Interactive Animated Backgrounds in React with tsParticles",
+    "link": "https://coderpad.io/blog/development/interactive-animated-backgrounds-react-tsparticles/",
+    "publishedDate": "2022-10-04",
+    "summary": "Learn how to create interactive particle animation in few steps in React using tsParticels.",
+    "image": "/assets/articles/interactive-animated-backgrounds-react-tsparticles.webp",
+    "tags": [
+      "react",
+      "tsParticles",
+      "animation"
+    ],
+    "language": [
+      "javascript"
+    ]
+  },
+  {
+    "title": "How to Implement Pagination with Webiny Headless CMS in Vue",
+    "link": "https://www.webiny.com/blog/implement-pagination-webiny-headless-cms-vue",
+    "publishedDate": "2022-09-14",
+    "summary": "In this tutorial, we are going to learn how to implement cursor-based pagination when using Webiny headless CMS in Vue.",
+    "image": "/assets/articles/implement-pagination-webiny-headless-cms-vue.webp",
+    "tags": [
+      "vue",
+      "webiny",
+      "pagination"
+    ],
+    "language": [
+      "javascript"
+    ]
+  },
+  {
+    "title": "Build a Book App With Infinite Scrolling and Meilisearch Strapi Plugin in React",
+    "link": "https://strapi.io/blog/build-a-book-app-with-infinite-scrolling-and-meilisearch-strapi-plugin-in-react",
+    "publishedDate": "2022-08-08",
+    "summary": "In this tutorial, we will be building a book app using Strapi. The app will focus on how to fetch and render data in chunks with infinite ...",
+    "image": "/assets/articles/build-book-app-infinite-scrolling-meilisearch-strapi.webp",
+    "tags": [
+      "react",
+      "strapi",
+      "infinite scrolling"
+    ],
+    "language": [
+      "javascript"
+    ]
+  },
+  {
+    "title": "Create a table of contents with highlighting in React",
+    "link": "https://blog.logrocket.com/create-table-contents-highlighting-react/",
+    "publishedDate": "2022-08-03",
+    "summary": "A table of contents summarizes the page’s content, allowing users to quickly navigate through sections of the page by clicking on the desired heading.",
+    "image": "/assets/articles/create-table-contents-highlighting-react.webp",
+    "tags": [
+      "react",
+      "toc"
+    ],
+    "language": [
+      "javascript"
+    ]
+  },
+  {
+    "title": "How to Implement Pagination with Webiny Headless CMS in React",
+    "link": "https://www.webiny.com/blog/implement-pagination-webiny-headless-cms-react",
+    "publishedDate": "2022-07-20",
+    "summary": "In this tutorial, we are going to learn how to implement cursor-based pagination when using Webiny headless CMS in React.",
+    "image": "/assets/articles/implement-pagination-webiny-headless-cms-react.webp",
+    "tags": [
+      "react",
+      "webiny",
+      "pagination"
+    ],
+    "language": [
+      "javascript"
+    ]
+  },
+  {
+    "title": "Persist state with Redux Persist using Redux Toolkit in React",
+    "link": "https://blog.logrocket.com/persist-state-redux-persist-redux-toolkit-react/",
+    "publishedDate": "2022-06-03",
+    "summary": "With the Redux Persist library, developers can save the Redux store in persistent storage. Therefore, even after refreshing the browser, the site state will...",
+    "image": "/assets/articles/persist-state-redux-persist-redux-toolkit-react.webp",
+    "tags": [
+      "react",
+      "redux toolkit",
+      "persist"
+    ],
+    "language": [
+      "javascript"
+    ]
+  },
+  {
+    "title": "Customize email templates when using Firebase in React",
+    "link": "https://blog.logrocket.com/send-custom-email-templates-firebase-react-express/",
+    "publishedDate": "2022-03-24",
+    "summary": "Generate custom email action links in Firebase to customize the verification and authentication emails automatically sent to users.",
+    "image": "/assets/articles/send-custom-email-templates-firebase-react-express.webp",
+    "tags": [
+      "react",
+      "express",
+      "firebase"
+    ],
+    "language": [
+      "javascript"
+    ],
+    "featured": true
+  },
+  {
+    "title": "User Registration and Auth Using Firebase and React",
+    "link": "https://css-tricks.com/user-registration-authentication-firebase-react/",
+    "publishedDate": "2022-02-02",
+    "summary": "The ability to identify users is vital for maintaining the security of any applications. Equally important is the code that’s written to manage user identities, particularly ...",
+    "image": "/assets/articles/user-registration-authentication-firebase-react.webp",
+    "tags": [
+      "react",
+      "firebase",
+      "authentication"
+    ],
+    "language": [
+      "javascript"
+    ]
+  },
+  {
+    "title": "Build a CRUD application in React with Firebase Web SDK v9",
+    "link": "https://blog.logrocket.com/build-crud-application-react-firebase-web-sdk-v9/",
+    "publishedDate": "2021-12-22",
+    "summary": "In this tutorial, we’ll cover how to carry out CRUD operations in Firestore by building a task manager demo app.",
+    "image": "/assets/articles/build-crud-application-react-firebase-web-sdk-v9.webp",
+    "tags": [
+      "react",
+      "firebase"
+    ],
+    "language": [
+      "javascript"
+    ]
+  },
+  {
+    "title": "Add a Contact Form to a React App with Netlify Forms",
+    "link": "https://www.sitepoint.com/react-app-contact-form-netlify-forms/",
+    "publishedDate": "2021-10-28",
+    "summary": "Using Netlify Forms, you can set up a contact form in React without writing your own server-side code to handle form submissions when your site is deployed on Netlify",
+    "image": "/assets/articles/react-app-contact-form-netlify-forms.webp",
+    "tags": [
+      "react",
+      "netlify",
+      "contact form"
+    ],
+    "language": [
+      "javascript"
+    ]
+  },
+  {
+    "title": "Managing Secrets with Doppler in Django",
+    "link": "https://dev.to/tammibriggs/managing-secrets-with-doppler-in-django-585l",
+    "publishedDate": "2021-10-02",
+    "summary": ".env files are great for managing configs but there are security issues relating to the synchronization and manual management of .env files across different environments which Doppler solves ...",
+    "image": "/assets/articles/managing-secrets-with-doppler-in-django-585l.webp",
+    "tags": [
+      "django",
+      "doppler"
+    ],
+    "language": [
+      "python"
+    ],
+    "featured": true
+  },
+  {
+    "title": "Building A Twitter Sidebar Clone With Material-UI And React",
+    "link": "https://blog.openreplay.com/building-a-twitter-sidebar-clone-with-material-ui-and-react/",
+    "publishedDate": "2021-08-28",
+    "summary": "Learn how to use Material UI a open source React component library to build a sidebar",
+    "image": "/assets/articles/building-a-twitter-sidebar-clone-with-material-ui-and-react.webp",
+    "tags": [
+      "react",
+      "material-ui"
+    ],
+    "language": [
+      "javascript"
+    ]
+  },
+  {
+    "title": "How to Implement Registration and Authentication in Django",
+    "link": "https://blog.loginradius.com/engineering/guest-post/implementing-registration-and-authentication-in-django-using-loginradius/",
+    "publishedDate": "2021-07-30",
+    "summary": "In this tutorial, you will learn how to implement user registration and authentication in Django using LoginRadius.",
+    "image": "/assets/articles/registration-authentication-django-loginradius.webp",
+    "tags": [
+      "django",
+      "loginradius",
+      "authentication"
+    ],
+    "language": [
+      "python"
+    ]
+  }
+]

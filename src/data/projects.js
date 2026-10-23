@@ -1,4 +1,4 @@
-// Temporary local project data — swap back to the GraphQL query later.
+// Software projects for the home page's "I also build software" section.
 // FluentDocs lives in data/docs.js, with the other docs-related work.
 // `video` is optional: if present, it's shown instead of `image`.
 const projects = [

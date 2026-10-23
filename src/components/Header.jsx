@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import '../styles/header.css'
-import { Link, NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router";
 import { useContextValue } from '../context'
 
 const iconProps = {
@@ -46,9 +46,9 @@ function Header() {
         <Link to="/" className="header__brand">TammiBriggs</Link>
         <nav>
           <NavLink to="/" end>Home</NavLink>
-          <NavLink to="docs">Docs</NavLink>
-          <NavLink to="blog">Articles</NavLink>
-          <NavLink to="contact">Contact</NavLink>
+          <NavLink to="/docs">Docs</NavLink>
+          <NavLink to="/blog">Articles</NavLink>
+          <NavLink to="/contact">Contact</NavLink>
         </nav>
         <div className="header__actions">
           <button
@@ -72,9 +72,9 @@ function Header() {
       </header>
       <nav className={`mobileNav ${isNavOpen ? 'mobileNavOpen' : ''}`}>
         <NavLink to="/" end onClick={closeNav}>Home</NavLink>
-        <NavLink to="docs" onClick={closeNav}>Docs</NavLink>
-        <NavLink to="blog" onClick={closeNav}>Articles</NavLink>
-        <NavLink to="contact" onClick={closeNav}>Contact</NavLink>
+        <NavLink to="/docs" onClick={closeNav}>Docs</NavLink>
+        <NavLink to="/blog" onClick={closeNav}>Articles</NavLink>
+        <NavLink to="/contact" onClick={closeNav}>Contact</NavLink>
       </nav>
     </>
   )

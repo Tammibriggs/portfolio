@@ -16,15 +16,38 @@
   border-color: var(--border-strong);
 }
 
-/* No min-height here: with the aspect ratio it would force a 355px minimum width */
+/* 3:2 boxes. The whole cover shows, centred (::after), and a blurred, enlarged
+   copy fills any space around covers of other shapes (::before), so no cover
+   is cropped. No min-height: with the aspect ratio it would force a minimum
+   width. */
 .article__img {
+  position: relative;
+  overflow: hidden;
   width: 100%;
-  aspect-ratio: 16 / 9;
+  aspect-ratio: 3 / 2;
   border-bottom: 1px solid var(--border);
   background-color: var(--surface-2);
-  background-size: cover;
-  background-repeat: no-repeat;
+}
+
+.article__img::before,
+.article__img::after {
+  content: "";
+  position: absolute;
+  background-image: var(--cover);
   background-position: center;
+  background-repeat: no-repeat;
+}
+
+.article__img::before {
+  inset: -24px;
+  background-size: cover;
+  filter: blur(18px);
+  opacity: 0.9;
+}
+
+.article__img::after {
+  inset: 0;
+  background-size: contain;
 }
 
 .article__desc {
@@ -74,16 +97,34 @@
   margin-top: 4px;
 }
 
-.row {
-  flex-direction: row;
+/* The featured card: a wider image on top on small screens... */
+.article--feature .article__img {
+  aspect-ratio: 16 / 9;
 }
 
-.row .article__img {
-  flex: 0 0 38%;
-  min-height: 0;
-  aspect-ratio: auto;
-  border-bottom: none;
-  border-right: 1px solid var(--border);
+/* ...and the image beside the text on wide ones. The image keeps its 3:2
+   shape (align-self) instead of stretching to the card's height. */
+@media (min-width: 1024px) {
+  .article--feature {
+    flex-direction: row;
+  }
+
+  .article--feature .article__img {
+    flex: 0 0 56%;
+    align-self: flex-start;
+    aspect-ratio: 3 / 2;
+    border-bottom: none;
+    border-right: 1px solid var(--border);
+  }
+
+  .article--feature .article__desc {
+    justify-content: center;
+    padding: 28px 32px;
+  }
+
+  .article--feature h2 {
+    font-size: 24px;
+  }
 }
 
 @media (min-width: 850px) {

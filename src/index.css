@@ -6,10 +6,8 @@ body {
   -moz-osx-font-smoothing: grayscale;
   min-height: 100vh;
   overflow-x: hidden;
-}
-
-#root {
-  overflow: hidden;
+  /* --bg comes from the theme tokens in app.css */
+  background-color: var(--bg);
 }
 
 code {

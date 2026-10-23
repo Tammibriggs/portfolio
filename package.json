@@ -2,48 +2,27 @@
   "name": "portfolio",
   "version": "0.1.0",
   "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "react-router dev",
+    "start": "react-router dev",
+    "build": "react-router build",
+    "postbuild": "node -e \"require('fs').copyFileSync('build/client/404/index.html', 'build/client/404.html')\""
+  },
   "dependencies": {
-    "@apollo/client": "^3.7.2",
     "@hotjar/browser": "^1.0.9",
-    "@testing-library/jest-dom": "^5.16.5",
-    "@testing-library/react": "^13.4.0",
-    "@testing-library/user-event": "^13.5.0",
+    "@react-router/node": "^7.18.4",
     "canvas-confetti": "^1.9.4",
     "eslint-plugin-react": "^7.37.2",
-    "graphql": "^16.6.0",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
+    "isbot": "^5.2.2",
+    "react": "^19.3.1",
+    "react-dom": "^19.3.1",
     "react-ga4": "^2.1.0",
-    "react-router-dom": "^6.4.4",
-    "react-scripts": "5.0.1",
-    "react-select": "^5.7.0",
-    "web-vitals": "^2.1.4"
-  },
-  "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
-  },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
-  },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
+    "react-router": "^7.18.4",
+    "react-select": "^5.10.2"
   },
   "devDependencies": {
-    "tailwindcss": "^3.3.2"
+    "@react-router/dev": "^7.18.4",
+    "vite": "^7.3.7"
   }
 }

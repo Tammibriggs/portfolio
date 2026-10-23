@@ -6,86 +6,30 @@ import DocsTooling from "../components/DocsTooling";
 import ArticleRow from "../components/ArticleRow";
 import About from "../components/About";
 import Work from "../components/Work";
-import { Link } from "react-router-dom";
-import { gql, useQuery } from "@apollo/client";
-import { useEffect, useState } from "react";
+import { Link } from "react-router";
 import Email from "../components/Email";
 import Experience from "../components/Experience";
-import localProjects from "../data/projects";
+import projects from "../data/projects";
 import { docsProjects, getHomeDocsProjects } from "../data/docs";
+import { newestArticles } from "../utils/articles";
+import { pageMeta } from "../utils/meta";
+
+export const meta = () =>
+  pageMeta({
+    title: "Taminoturoko Briggs | Technical writer for APIs and developer tools",
+    description:
+      "Taminoturoko Briggs is a technical writer for APIs and developer tools. API references, quickstarts and tutorials, published in LogRocket, CSS-Tricks and SitePoint.",
+    path: "/",
+  });
 
 const ARTICLES_SHOWN = 5;
 const DOCS_SHOWN = 2;
 
-const LIST_FEATURED_PROJECTS = gql`
-  query ListFeaturedProjects($where: DeployedProjectListWhereInput) {
-    listDeployedProjects(where: $where) {
-      data {
-        image
-        name
-        description
-        githubLink
-        projectLink
-        techIcons {
-          dark
-          light
-        }
-      }
-    }
-  }
-`;
-
-const LIST__ARTICLES = gql`
-  query ListArticles($limit: Int) {
-    listFeaturedHomeArticles(limit: $limit, sort: createdOn_DESC) {
-      data {
-        image
-        topic
-        publishedDate
-        tag
-        summary
-        link
-      }
-    }
-  }
-`;
-
 function Home() {
-  const [projects, setProjects] = useState(localProjects);
-
-  // Temporarily disabled while using local project data.
-  // const { data } = useQuery(LIST_FEATURED_PROJECTS, {
-  //   variables: {
-  //     where: { featured: true },
-  //   },
-  // });
-
-  // useEffect(() => {
-  //   if (data) {
-  //     setProjects(data.listDeployedProjects.data);
-  //   }
-  // }, [data]);
-
   const homeDocs = getHomeDocsProjects(DOCS_SHOWN);
   const hiddenDocsCount = docsProjects.length - homeDocs.length;
 
-  const { data: articlesData } = useQuery(LIST__ARTICLES, {
-    variables: {
-      limit: 10,
-    },
-  });
-
-  // Newest first, since the list shows each article's date
-  const articles = articlesData
-    ? [...articlesData.listFeaturedHomeArticles.data]
-        .sort((a, b) => b.publishedDate.localeCompare(a.publishedDate))
-        .slice(0, ARTICLES_SHOWN)
-    : null;
-
-  useEffect(() => {
-    document.title =
-      "Taminoturoko Briggs | Technical writer for APIs and developer tools";
-  }, []);
+  const articles = newestArticles().slice(0, ARTICLES_SHOWN);
 
   return (
     <div className="home">
@@ -105,7 +49,7 @@ function Home() {
         </div>
         {hiddenDocsCount > 0 && (
           <div className="docs__more">
-            <Link to="docs" className="link-arrow">
+            <Link to="/docs" className="link-arrow">
               See all {docsProjects.length} docs projects
             </Link>
           </div>
@@ -121,29 +65,23 @@ function Home() {
           title="Articles and tutorials"
           intro="Tutorials and guides I’ve written for developer publications."
         />
-        {articles ? (
-          <>
-            <ul className="articleList">
-              {articles.map((article) => (
-                <ArticleRow
-                  key={article.link}
-                  title={article.topic}
-                  link={article.link}
-                  publishedDate={article.publishedDate}
-                  summary={article.summary}
-                  tags={article.tag}
-                />
-              ))}
-            </ul>
-            <div className="articleList__more">
-              <Link to="blog" className="link-arrow">
-                See all articles
-              </Link>
-            </div>
-          </>
-        ) : (
-          <span className="loader loader--mod"></span>
-        )}
+        <ul className="articleList">
+          {articles.map((article) => (
+            <ArticleRow
+              key={article.link}
+              title={article.title}
+              link={article.link}
+              publishedDate={article.publishedDate}
+              summary={article.summary}
+              tags={article.tags}
+            />
+          ))}
+        </ul>
+        <div className="articleList__more">
+          <Link to="/blog" className="link-arrow">
+            See all articles
+          </Link>
+        </div>
       </section>
 
       <Experience />

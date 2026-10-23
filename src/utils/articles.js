@@ -1,3 +1,5 @@
+import articles from "../data/articles.json";
+
 // Publication names for the sites my articles appear on, keyed by hostname.
 const PUBLICATIONS = {
   "blog.logrocket.com": "LogRocket",
@@ -26,4 +28,9 @@ export function formatMonth(date) {
   const parsed = new Date(`${date}T00:00:00`);
   if (Number.isNaN(parsed.getTime())) return date;
   return parsed.toLocaleDateString("en-US", { month: "short", year: "numeric" });
+}
+
+// Every article in src/data/articles.json, newest first
+export function newestArticles() {
+  return [...articles].sort((a, b) => b.publishedDate.localeCompare(a.publishedDate));
 }

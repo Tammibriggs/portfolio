@@ -1,22 +1,19 @@
-import { useEffect } from "react";
 import Hero from "../components/Hero";
 import DocCaseStudy from "../components/DocCaseStudy";
 import DocsTooling from "../components/DocsTooling";
 import { docsProjects } from "../data/docs";
+import { pageMeta } from "../utils/meta";
+
+export const meta = () =>
+  pageMeta({
+    title: "Documentation projects | Taminoturoko Briggs",
+    description:
+      "API references, quickstarts and guides by Taminoturoko Briggs, each with links to the docs themselves.",
+    path: "/docs",
+  });
 
 // Every documentation project, in full. The home page shows only a few.
 function Docs() {
-  useEffect(() => {
-    document.title = "Documentation projects | Taminoturoko Briggs";
-
-    // Honour links such as /docs#maritime; otherwise start at the top
-    const target =
-      window.location.hash &&
-      document.getElementById(decodeURIComponent(window.location.hash.slice(1)));
-    if (target) target.scrollIntoView();
-    else window.scrollTo({ top: 0 });
-  }, []);
-
   return (
     <div className="docsPage">
       <Hero text1="Docs" text2="Documentation projects" />

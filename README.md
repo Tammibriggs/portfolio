@@ -1,70 +1,40 @@
-# Getting Started with Create React App
+# Taminoturoko Briggs: portfolio
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+The source of https://tammibriggs.netlify.app/, built with React and React Router. Every page is pre-rendered to static HTML when the site is built, so it shows before any JavaScript loads and each page has its own title and link preview.
 
-## Available Scripts
+## Run it
 
-In the project directory, you can run:
+Requires Node.js 22 or newer.
 
-### `npm start`
+```bash
+npm install
+npm run dev      # development server with live reload (npm start does the same)
+npm run build    # builds the site into build/client
+```
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Netlify runs `npm run build` and publishes `build/client` (see `netlify.toml`).
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Where things live
 
-### `npm test`
+| Path | What it is |
+|---|---|
+| `src/routes.js` | Each page's address and the file that renders it |
+| `react-router.config.js` | The pages to pre-render. Add a new page's address here too |
+| `src/root.jsx` | The HTML document, theme handling, header and footer around every page |
+| `src/pages/` | One file per page. Each exports `meta` for its title and link preview |
+| `src/data/articles.json` | Every article. The home page shows the five newest; `"featured": true` marks the three at the top of the Articles page |
+| `src/data/docs.js` | The documentation case studies, with notes on each field |
+| `src/data/projects.js` | The software projects |
+| `public/assets/` | Images, including article covers and case-study screenshots |
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Add an article
 
-### `npm run build`
+```bash
+python3 scripts/add-article.py URL --tags "react, firebase" --language javascript
+```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+It reads the title, summary, date and cover image from the page, saves the cover in `public/assets/articles/`, and adds the entry to `src/data/articles.json`. Add `--dry-run` to see the entry without changing anything. It warns if the byline isn't yours, and asks for `--summary` or `--date` when the page doesn't give them.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Settings
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+`REACT_APP_GOOGLE_ANALYTICS_ID` turns on Google Analytics in production builds. Put it in `.env.local` locally, and in Netlify's environment variables for the live site.

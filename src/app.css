@@ -1,5 +1,7 @@
-/* Design tokens. The theme id sits on the .app element (see App.js). */
-#light {
+/* Design tokens. The theme id ("light" or "dark") sits on <html>; root.jsx sets it.
+   Light is also the fallback when JavaScript is off. */
+#light,
+:root:not(#dark) {
   --bg: #fbfaf8;
   --surface: #ffffff;
   --surface-2: #f3f1ec;
@@ -169,6 +171,30 @@ p {
   .section-heading {
     margin-top: 180px;
   }
+}
+
+/* ─── Not-found and error pages ────────────────────────────── */
+.notFound,
+.errorPage {
+  padding-top: 32px;
+}
+
+.notFound p,
+.errorPage p {
+  margin: 16px 0 24px;
+  font-size: 17px;
+  color: var(--text-2);
+}
+
+.errorPage {
+  padding-top: 96px;
+}
+
+.errorPage h1 {
+  font-family: var(--font-serif);
+  font-size: 40px;
+  font-weight: 600;
+  color: var(--text);
 }
 
 /* ─── Shared pieces ────────────────────────────────────────── */

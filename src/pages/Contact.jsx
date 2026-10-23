@@ -1,12 +1,15 @@
-import React, { useEffect } from "react";
 import Email from "../components/Email";
 import Hero from "../components/Hero";
+import { pageMeta } from "../utils/meta";
+
+export const meta = () =>
+  pageMeta({
+    title: "Contact | Taminoturoko Briggs",
+    description: "Get in touch with Taminoturoko Briggs about technical writing, docs or tutorials.",
+    path: "/contact",
+  });
 
 function Contact() {
-  useEffect(() => {
-    document.title = "Contact | Taminoturoko Briggs";
-  }, []);
-
   return (
     <div>
       <Hero text1="Contact" text2="Feel free to reach out to me!" />

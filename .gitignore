@@ -21,3 +21,9 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+# React Router type files
+/.react-router
+
+# Python cache
+__pycache__/

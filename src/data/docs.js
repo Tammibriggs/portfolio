@@ -11,13 +11,21 @@
 //   summary      one or two sentences: what it is and what you did
 //   problem, work, result
 //                one short paragraph each, with numbers where you have them
-//   image        a 1200×675 screenshot in public/assets/ (cropped from the top left)
+//   image        the screenshot for wide screens (1000px and up): a 1000×625
+//                area of the page captured at 2× (2000×1250), saved as
+//                lossless WebP in public/assets/. Keep the area about 1000px
+//                wide so its text shows near full size
+//   imageMobile  optional, but recommended: the screenshot for narrower
+//                screens, a 390×520 area of the page at a phone width captured
+//                at 3× (1170×1560). Without it, those screens zoom into the
+//                top left of `image`
 //   imageAlt     what the screenshot shows
 //   caption      optional: one line under the screenshot
 //   url          the live docs; also the screenshot's link
 //   before       optional: the docs as they were, shown on a "Before" tab
-//                { image, imageAlt, caption, url }. Show the same page or
-//                operation as `image`, so the two tabs compare like with like.
+//                { image, imageMobile, imageAlt, caption, url }. Show the
+//                same page or operation as `image`, captured at the same
+//                size, so the two tabs compare like with like.
 //   deliverables 2–4 docs to read: { type, description, link }
 //   tools        short tool names, shown as tags
 //   sourceLink   the repository
@@ -42,14 +50,16 @@ export const docsProjects = [
     // Source: GAP_ANALYSIS.md, the contradictions table
     result:
       "Live testing found four places where Maritime's docs are wrong or misleading. For example, the Limits page says a request without an API key returns 401. It returns 403.",
-    image: "/assets/maritime-docs-after.webp",
+    image: "/assets/maritime-after.webp",
+    imageMobile: "/assets/maritime-after-mobile.webp",
     imageAlt:
       "The Create a directory operation in the Maritime API reference: a description, the path parameter, the request body, the response codes, and a curl example with its response",
     caption:
       "My reference: the same operation, with a request body, examples and 7 response codes.",
     url: "https://maritime-unofficial-docs.netlify.app/",
     before: {
-      image: "/assets/maritime-docs-before.webp",
+      image: "/assets/maritime-before.webp",
+      imageMobile: "/assets/maritime-before-mobile.webp",
       imageAlt:
         "Maritime's API page listing the file endpoints. The line for creating a folder, POST /api/agents/{agent_id}/files/mkdir, is outlined: it has no description, parameters or examples",
       caption: "Maritime's API page: the full entry for creating a folder.",
@@ -96,6 +106,7 @@ export const docsProjects = [
     result:
       "Between rounds 1 and 2 of the comparison, the share of DocScout's gap claims that were right rose from 50% to 81%, and 3 of its 4 picks were worth acting on.",
     image: "/assets/docscout.webp",
+    imageMobile: "/assets/docscout-mobile.webp",
     imageAlt:
       "The DocScout website: a headline, the four checks every pick passes, and how DocScout works",
     url: "https://docscout-web.onrender.com/",
